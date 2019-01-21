@@ -1,0 +1,89 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	body{ margin: 0;padding: 0;font-family: "微软雅黑"}
+	body,html{-webkit-text-size-adjust: none;width: 100%;height: 100%;}
+	*{text-decoration: none;list-style: none;}
+	img{border: 0px;}
+	ul,li,dl,dd,dt,p,ol{padding: 0;margin: 0;}
+	.fl{float: left;}
+	.fr{float: right;}
+	.index{overflow: hidden;}
+	.clr{clear:both; height:0px; width:100%; font-size:1px; line-height:0px; visibility:hidden; overflow:hidden;}
+	.pointer{cursor:pointer;}
+	a,input,button{ outline:none; }
+	::-moz-focus-inner{border:0px;}
+	a{color: #000;text-decoration:none}
+	.wrapper{clear: both;width: 100%;}
+	table { border-collapse:collapse; }
+  </style>
+ </head>
+ <body>
+<!--  行分组：
+	可以将连续几行，划分到一个组里，进行统一管理
+	表头行：<thead></thead>表格最上面一行的标题放在thead中
+	表主体：<tbody></tbody>允许将若干个放在tbody中进行统一管理
+	表尾行：<tfoot></tfoot>表格中最后一行放在tfoot中
+--> 
+
+	<table bgcolor="pink" border="1px" bordercolor="blue" align="center" width="500px" height="500px"> 
+		<thead>
+			<th>1</th>
+			<th>1</th>
+			<th>1</th>
+		</thead>
+		<tbody>
+			<th>2</th>
+			<th>
+			<!-- 表格的嵌套：-->
+				<table bgcolor="red" border="1px" width="100px" height="100px">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</th>
+			<th>2</th>
+		</tbody>
+		<tfoot>
+			<th>3</th>
+			<th>3</th>
+			<th>3</th>
+		</tfoot>
+	</table>
+	<img src="img/classList.png" alt="" align="center">
+	<span style="color:red;font-size:30px;">66666</span>
+   <script></script>
+ </body>
+</html>

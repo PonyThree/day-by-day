@@ -1,0 +1,74 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	a{
+	text-decoration:none;
+	}
+	ul li{
+	list-style-type:none;
+	}
+	div{
+	width: 200px;
+	height: 200px;
+	margin:20px auto;
+	border:1px solid #ff0;
+	}
+	div:hover{
+/*	animation-name:change;*/
+/*	animation-duration:5s;*/
+/*	animation-timing-function:linear;*/
+/*	animation-delay:1s;*/
+
+	animation:change 3s linear 2s 2  normal both;
+/*	animation-fill-mode:forwards;*/
+	}
+	@keyframes change{
+		0%{
+		background-color: #00f;
+		border-radius:0%;
+		}  
+		25%{
+		background-color: #f00;
+		border-radius:50%;
+		}
+		50%{
+		background-color: #faf;
+		border-radius:75%;
+		}
+
+		100%{
+		background-color: #0f0;
+		border-radius:100%;
+		}
+	}
+	</style>
+ </head>
+ <body>
+  <div></div>
+   <script></script>
+ </body>
+</html>

@@ -1,0 +1,82 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+/*	1.1亲兄弟选择器*/
+/*	#p1+i{*/
+/*		background-color: #ff0;*/
+/*	}*/
+/*	1.2匹配所有兄弟元素*/
+/*	#p1~p{*/
+/*	background-color: #aaf;*/
+/*	}*/
+	h3+p{
+	margin-top:30px;
+	}
+	p~p{
+	margin-top:10px;
+	}
+/*	2.属性选择器*/
+	div[title]{background-color: #faa;}
+/*	同时具备两个属性的标签*/
+	[class][title]{
+	color:#aaf;
+	}
+	[id='p2']{
+	background-color: #aaf;
+	}
+/*	匹配含有该属性值的标签*/
+	[title*='脉动']{
+	color:#ff0;
+	}
+/*	匹配必须含有一个单独属性值(单词状态)的标签*/
+	[title~=new]{
+	color:#00f;
+	}
+/*	匹配属性值中以p开头的标签*/
+	[id^='p']{
+	color:hotpink;
+	}
+	[id$='1']{
+	background-color: #ffa;
+	}
+	</style>
+ </head>
+ <body>
+  <p id='p1'>大娃</p>
+  <i class='i1' title='happy new year'>二娃</i>
+  <span class='i'>三娃</span>
+  <b id='b1'>四娃</b>
+  <div title='happynewyear'>五娃</div>
+  <p id='p2'>六娃</p>
+  <p style=''>幺娃</p>
+  <br>
+  <br>
+  <br>
+  <h3>可乐(Live版)-赵浴辰</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, vero, mollitia, magnam nostrum ipsa voluptatibus labore sed ea sapiente nemo aliquam minima quibusdam expedita libero quaerat ad ducimus illo rerum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, assumenda, tenetur a laudantium architecto in cupiditate atque nemo modi animi iure sit ipsa optio inventore aliquam fugiat iste quae ratione.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, maiores, illo, eveniet, dicta officia commodi molestias voluptatem iure doloremque laborum aspernatur inventore ea fugit provident repudiandae earum dolorem officiis voluptatibus.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, soluta, quisquam dolorem amet placeat vero excepturi voluptatibus fugiat odit ullam accusamus incidunt illo quis pariatur quaerat minima sunt commodi corporis.</p>
+   <script></script>
+ </body>
+</html>

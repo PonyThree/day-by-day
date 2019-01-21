@@ -1,0 +1,39 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+  <div id='d1'><span>这是测试的文本!!</span></div>
+   <script>
+		//获取d1的对象
+		//html支持，凡是有id的元素，直接用id就可以当做元素对象
+		//var ele=document.getElementById('d1');
+		//var ele=d1;
+		//console.log(ele);
+		//console.log(ele.innerHTML);
+		//ele.innerHTML=`我是通过DOM操作添加的值`;
+		d1.innerHTML+='<b>HTML5支持id就是对象</b>';
+		console.log(d1.innerHTML);
+   </script>
+ </body>
+</html>

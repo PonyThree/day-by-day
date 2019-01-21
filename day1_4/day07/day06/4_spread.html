@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	console.log(Math.max(2,7,1,5));
+	var arr=[2,7,1,5];
+	console.log(Math.max(arr));//NaN
+	//使用apply可以将数组打散成纯数据
+	//但是apply的主要目的还是改变this的指向，因为本实例没使用this,所以这里随便让其指向什么地方。
+	console.log(Math.max.apply(null,arr))//7
+	//使用...在函数调用时,可以将数据打散成纯数据
+	console.log(Math.max(...arr));//7
+	//在函数声明时使用...进行的是将数据打包到数组里面
+
+	
+	
+	
+	
+	</script>
+</body>
+</html>

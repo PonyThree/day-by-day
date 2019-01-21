@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//全局范围---随意修改全局变量
+	function 孩子花压岁钱(x){
+	var total=1000;
+		total=total-x;
+		console.log(`花了${x}元,还剩${total}元`);
+	}
+	//total=0;
+	/*孩子花压岁钱(100);
+	孩子花压岁钱(100);
+	孩子花压岁钱(100);
+	孩子花压岁钱(100);*/
+	
+	function js(){
+		var total=1000;
+		return function 孩子花压岁钱(x){
+			total=total-x;
+			console.log(`花了${x}元,还剩${total}元`);
+		}
+	}
+	//此时变量不能被修改
+	var 孩子花压岁钱=js();
+	total=0;
+	孩子花压岁钱(100);
+	孩子花压岁钱(100);
+	孩子花压岁钱(100);
+	console.dir(孩子花压岁钱);
+
+	
+	
+	
+	</script>
+</body>
+</html>

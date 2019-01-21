@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="content">
+<input type="button" onclick="show()" value="插入">
+<div id="d1"></div>
+<input type="text" id="txt1">+
+<input type="text" id="txt2">=
+<input type="text" id="txt3"><br/>
+<input type="button" value="计算" onclick="caculate()">
+<script>
+    function show(){
+        d1.innerHTML=content.value;
+    }
+    function caculate(){
+        txt3.value=parseInt(txt1.value)+parseInt(txt2.value);
+    }
+</script>
+</body>
+</html>

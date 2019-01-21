@@ -1,0 +1,97 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+	<div>用户名称:<input type="text" name="uname" id="uname" onblur='checkUname()'><span id='unameMsg'></span></div>	
+	<div>用户密码:<input type="password"  id="upwd1"></div>	
+	<div>密码验证:<input type="password"  id="upwd2" onblur='checkUpwd()'><span id='upwdMsg'></span></div>	
+	<div>电话号码:<input type="text"  id="phone"></div>	
+	<div>用户邮箱:<input type="text"  id="email"></div>	
+	<div>真实姓名:<input type="text"  id="user_name"></div>	
+	<div>用户性别:
+		<select  id="gender">
+			<option value="1">男</option>
+			<option value="0">女</option>
+			<option value="2">不详</option>
+		</select>
+	</div>
+	<div><input type="submit" value="注册" onclick='register()'></div>
+   <script>
+   var isUregister=false;
+   var isPregister=false;
+   //用户名检查函数
+   function checkUname(){
+	   var xhr=new XMLHttpRequest;
+	   xhr.onreadystatechange=function (){
+		   if(xhr.readyState==4&&xhr.status==200){
+			   var result =xhr.responseText;
+			   if(result==1){
+				   unameMsg.innerHTML='用户名已被注册';
+				   isUregister=false;
+			   }else{
+				   unameMsg.innerHTML='用户名可用';
+				   isUregister=true;
+			   }
+		   }
+	   }
+	   xhr.open('get','/mypro/checkUname?uname='+uname.value,true);
+	   xhr.send(null);
+   }
+   //用户密码验证
+   function checkUpwd(){
+	   if(upwd1.value==upwd2.value){
+			upwdMsg.innerHTML='密码正确';
+			isPregister=true;
+	   }else{
+		   upwdMsg.innerHTML='密码错误';
+		   isPregister=false;
+	   }
+   }
+	function register(){
+		if(isUregister==false||isPregister==false){
+			alert('注册失败');
+			return;
+		}else{
+			alert('注册成功');
+		}
+		var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function (){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					if(result==1){
+						location.href='http://127.0.0.1:3000/02_list.html';
+					}else{
+						document.write('注册失败');
+					}
+				}
+			}
+			xhr.open('post','/mypro/register',true);
+			//修改请求头，可以发送任意文本
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');			
+			var formdata='uname='+uname.value+'&upwd='+upwd1.value+'&email='+email.value+'&phone='+phone.value+'&user_name='+user_name.value+'&gender='+gender.value;
+			xhr.send(formdata);
+	}
+   </script>
+ </body>
+</html>

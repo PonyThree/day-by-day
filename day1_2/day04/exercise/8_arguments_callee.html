@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	"use strict";
+	//斐波拉数据
+	/*function fib(n){
+		if(n<3){
+			return 1;
+		}else{
+			//这种方式会出现如果函数名不知道，需要修改多处函数名---问题(紧耦合)
+			//return fib(n-1)+fib(n-2);
+			//解决办法--松耦合
+			return arguments.callee(n-1)+arguments.callee(n-2);
+		}
+	}
+	console.log(fib(10));*/
+	//严格模式不支持arguments.callee
+	//升级版的斐波拉---用循环实现
+	function fib(n){
+		if(n<3){
+			return 1;
+		}else{
+			var f1=1,f2=1,fn;
+			for(var i=0;i<=n;i++){
+				fn=f1+f2;
+				f1=f2;
+				f2=fn;
+			}
+			return fn;
+		}
+	}
+	console.log(fib(100));
+	</script>
+</body>
+</html>

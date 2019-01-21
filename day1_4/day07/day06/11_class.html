@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*function Student(sname,sage){
+		this.sname=sname;
+		this.sage=sage;
+
+	}
+	Student.prototype={
+		intr(){
+			console.log(`I'm ${this.sanme},I'm ${this.sage}`);
+		}
+	}
+	var lilei=new Student('Li Lei',11);
+	console.log(lilei);*/
+	//修改为类
+	/*
+	*1.用class{}包裹构造函数和原型对象
+	*2.构造函数名提升为类型名，构造函数统一更名为constructor
+	*3.所有原型对象方法可直接写在class中
+	*
+	*/
+	class Student{
+		constructor(sname,sage){
+			this.sname=sname;
+		this.sage=sage;
+		}
+		intro(){
+			console.log(`I'm ${this.snam e},I'm ${this.sage}`);
+		}
+	}
+	var lilei=new Student('Li Lei',11);
+	console.log(lilei);
+	
+	
+	
+	</script>
+</body>
+</html>

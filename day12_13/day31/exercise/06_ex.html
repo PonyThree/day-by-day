@@ -1,0 +1,73 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	.show_img{
+	width:315px;
+	height: 20px;
+	margin:30px auto 5px;
+	}
+	a{
+	text-decoration:none;
+	color:orange;
+	padding:0 5px;
+	margin-right:8px;
+	
+	}
+	ul li{
+	list-style-type:none;
+	}
+	p.img{
+	width: 200px;
+	height: 200px;
+	margin:0 auto;
+	border:2px solid #ddd;
+	}
+	p>img{
+	display:none;
+	}
+	p>img:target{
+	display: block;
+	}
+	
+	</style>
+ </head>
+ <body>
+  <div class='show_img'>
+  	<a href="#img1">海鲜火锅</a>
+  	<a href="#img2">彩色春卷</a>
+  	<a href="#img3">八小碗</a>
+  	<a href="#img4">烤羊排</a>
+  </div>
+  <p class='img'>
+  	<img src="img/index_hot_food_img1.png" alt="" id='img1'>
+  	<img src="img/index_hot_food_img2.png" alt="" id='img2'>
+  	<img src="img/index_hot_food_img3.png" alt="" id='img3'>
+  	<img src="img/index_Sbanner_img3.png" alt="" id='img4'>
+  </p>
+   <script></script>
+ </body>
+</html>

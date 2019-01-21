@@ -1,0 +1,60 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+  <form action="" method='post' enctype='multipart/form-data'>  
+	<div>用户名称:<input type="text" name="uname"  placeholder="6~20字符之间"></div>  
+	<div>用户密码:<input type="password" name="upwd" placeholder="6~20字符之间"></div>
+	<input type="radio" name='gender' value='m'>男
+	<input type="radio" name='gender' value='f' checked>女
+	<input type="radio" name='gender' value='un'>不确定<br/>
+	<input type="radio" name='like' value='like' checked>喜欢
+	<input type="radio" name='like' value='unlike'>不喜欢
+	<input type="radio" name='like' value='unkonw'>平淡<br/>
+<!-- 	hobby%5B%5D=eat&hobby%5B%5D=drink&hobby%5B%5D=play&hobby%5B%5D=fun&hobby%5B%5D=sleep  
+	前端提交给后台时，[]变为了%5B%5D
+
+-->
+	<input type="checkbox" name="hobby[]" value='eat'>吃
+	<input type="checkbox" name="hobby[]" value='drink'>喝
+	<input type="checkbox" name="hobby[]" value='play'>玩
+	<input type="checkbox" name="hobby[]" value='fun'>乐
+	<input type="checkbox" name="hobby[]" value='sleep'>睡
+	<hr>
+	<input type="hidden" name='uid' value='web18100023'>  
+	<hr>
+	<p>请上传你的头像</p>
+	<input type="file" name='me[]' multiple>
+	<input type="submit" value='登录'>
+	<input type="reset" value='重置'>
+	<input type="button" value='点点我试试' onclick='show()'>
+	<button onclick='show()'>我是button按钮</button>
+  </form>
+   <script>
+    function show(){
+		alert('试试就试试');
+	}
+   </script>
+ </body>
+</html>

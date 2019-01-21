@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//妈妈
+	function Student(sname,sage){
+		//要求所有学生
+		this.sanme=sname;//必须有sname属性
+		this.sage=sage;//必须有sage属性
+	}
+
+	//创建构造函数时赠送的爸爸
+	Student.prototype.intro=function (){//必须有格式一致的intro方法
+			console.log(`I'm  ${this.sage},I'm ${this.sage}`);
+		}
+	Student.prototype.className='初一2班';
+	//孩子
+	var lilei=new Student('li lei',11);
+	var hmm=new Student('han meimei',12);
+	console.log(lilei);
+	console.log(hmm);
+	//孩子继承父亲的共有属性
+	console.log(lilei.className,hmm.className);
+	//孩子强制改变自己属性时，将不再使用父亲的共有属性，而是运用自己的创建属性
+	lilei.className='初二2班';
+	console.log(lilei.className,hmm.className);
+	Student.prototype.className='初二2班';
+	console.log(lilei.className,hmm.className);
+	//所以，不要轻易操作孩子改变属性
+	//如果向原型对象中放入的东西较多时，可以给他一个对象
+	Student.prototype={
+		intro:function (){
+			console.log(`I'm  ${this.sage},I'm ${this.sage}`);
+		},
+		className:'初二2班'
+	};
+	</script>
+</body>
+</html>

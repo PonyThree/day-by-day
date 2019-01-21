@@ -1,0 +1,89 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body onload='queryuser()'>
+ <form action="/mypro/update" method='post'>
+<!--   uid:<input type="text" id='uid'><input type='button' value='查询' onclick='queryuser()'> -->
+	  <div >
+		登录名称:<input type="text" name="uname" id="uname">
+	  </div>
+	  <div>
+		登录密码:<input type="text" name="upwd" id="upwd">
+	  </div>
+	  <div>
+			邮箱：<input type="email" name="email" id="email">
+	  </div>
+	  <div>
+			电话号码:<input type="phone" name="phone" id="phone">
+	  </div>
+	  <div>
+			真实姓名:<input type="text" name="user_name" id="userName">
+	  </div>
+	  <div>
+			性别:<input type="radio" name='gender' id='m'><label for="m">男</label>
+			<input type="radio" name='gender' id='f'><label for="f">女</label>
+			<input type="radio" name='gender' id='unk'><label for="unk">不详</label>
+	  </div>
+	  <input type="hidden" name="uid" id="id"><br/>
+	  <input type="submit" value='修改'>
+  </form>
+   <script>
+		function queryuser(){
+			//获取url的参数uid
+			var urlParams=new URLSearchParams(location.search);
+			var uid=urlParams.get('uid');
+			console.log(uid);
+			var xhr=new XMLHttpRequest;
+			xhr.onreadystatechange=function (){
+				if(xhr.readyState==4&& xhr.status==200){
+					var result=xhr.responseText;
+					if(result==0){
+						alert('查无此人');
+						return;
+					}
+					var user=JSON.parse(result);
+					//console.log(user);
+					uname.value=user.uname,
+					upwd.value=user.upwd,
+					email.value=user.email,
+					phone.value=user.phone,
+					userName.value=user.user_name;
+					id.value=uid;
+
+					if(user.gender=='1'){
+						m.checked=true;
+					}else if(user.gender=='0'){
+						f.checked=true;
+					}else{
+						unk.checked=true;
+					}
+				}
+			}
+			xhr.open('get','/mypro/queryuser?uid='+uid,true);
+			xhr.send(null);
+		}
+   
+   </script>
+ </body>
+</html>

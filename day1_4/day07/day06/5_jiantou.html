@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*var arr=[12,3,123,1,2,23];
+		arr.sort(function(a,b){return a-b});
+		console.log(arr);
+
+		var str="you can you up";
+		str=str.replace(
+		/\b[a-z]/ig,
+		function(kword){
+			return kword.toUpperCase();
+		}
+		);
+		console.log(str);
+
+		var arr1=[1,2,3,4,5];;
+		arr1.forEach(function(elem,i,arr){
+		arr[i]=elem*2;
+		});
+		console.log(arr1);
+
+		var arr2=[1,2,3,4,5];
+		var evens=arr2.map(function(elem){
+		return elem*2;
+		})
+		console.log(arr2);
+		console.log(evens);
+
+		(function(){
+		var t=new Date();
+		alert(`当前时间,at:${t.toLocaleString()}`);
+		})()
+
+		setInterval(function(){
+		console.log("页面开始加载");
+		},1000);*/
+		var arr=[12,3,123,1,2,23];
+		arr.sort((a,b)=>a-b);
+		console.log(arr);
+
+		var str="you can you up";
+		str=str.replace(
+		/\b[a-z]/ig,
+		keywords=>keywords.toUpperCase()
+		);
+		console.log(str);
+
+		var arr1=[1,2,3,4,5];;
+		arr1.forEach((ele,i,arr)=>arr[i]=ele*2);
+		console.log(arr1);
+
+		var arr2=[1,2,3,4,5];
+		var evens=arr2.map(ele=>ele*2);
+		console.log(arr2);
+		console.log(evens);
+
+		(()=>{
+		var t=new Date();
+		alert(`当前时间,at:${t.toLocaleString()}`);
+		})()
+		setInterval(()=>console.log("页面开始加载")
+		,1000);
+	</script>
+</body>
+</html>

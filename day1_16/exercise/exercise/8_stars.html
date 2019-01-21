@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    img { position: relative; }
+  </style>
+</head>
+<body>
+<img id="s1" src="img/star.png"><br/>
+<img id="s2" src="img/star.png"><br/>
+<img id="s3" src="img/star.png"><br/>
+<img id="s4" src="img/star.png"><br/>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+  /*
+  s1在屏幕左上角的小星星， 点击后从左移动到屏幕右边
+  s2在屏幕左上角的小星星，点击后从左移动到屏幕右边，再移动到下边——走直角
+  s3在屏幕左上角的小星星，点击后从左上角移动到屏幕右下边，走斜线
+  s4点击小星星，变大、变淡....  直至消失
+*/
+$('#s1').click(function(){
+  var $s=$(this);
+  if(!$s.is(':animated')){//如果没有启动动画
+    $(this).animate({
+    left:300
+    },2000)//持续时间2s
+  }else //否则停止动画
+  $s.stop(); 
+});
+$('#s2').click(function(){
+   var $s=$(this);
+  if(!$s.is(':animated')){//如果没有启动动画
+    $(this)//[{left:300},{top:100}]//动画队列
+  .animate({left:300},2000)//先
+  .animate({top:100},2000)//后
+  }else
+   $s.stop(true);//传入参数true，表示清空队列，此时后续队列里面的动画不在拥有，也就不会继续执行
+})
+$('#s3').click(function(){
+  var $s=$(this);
+  if(!$s.is(':animated')){//如果没有动画
+    //启动动画
+      $s.animate({left:300,top:300},5000)
+  }else
+    $s.stop();
+})
+$('#s4').click(function(){
+  $(this).animate({//动画 相当于定时器，是异步执行的,不会影响后续操作
+    width:256,
+    height:256,
+    marginLeft:-64,
+    marginTop:-64,
+    opacity:0
+  },2000)
+
+
+/*$('#s4').click(function(){
+  $(this).animate({//动画 相当于定时器，是异步执行的,不会影响后续操作
+    width:256,
+    height:256,
+    marginLeft:-64,
+    marginTop:-64
+  },2000,function(){//回调函数在动画完成之后才执行
+    //jQuery动画中的回调函数里的this指的就是当前元素
+    $(this).hide();
+  })*/
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var t=0;//记录总时间
+	function conn(){
+		document.write(`建立连接时间消耗0.3s<br/>`);
+		t+=0.3;
+	}
+	function query(){
+		document.write(`查询数据耗时0.8s<br/>`);
+		t+=0.8;
+		var err=false;
+		if(err){
+			var t=new Date();//因为变量t提升，所以此时t+=0.8操作的提升上去的var t= undefined,函数调用完之后就会被销毁，外部访问不到。
+			//如果此时改为let t=new Date()，程序就不会出问题了，此时可模拟为一个匿名函数自调用,此时的t变为了_t,函数调用之后就被销毁,_t也不存在了.
+			document.write(`<b style='color:red'>出错啦,at:${t.toLocalString()}</b><br/>`);
+		}
+	}
+	conn();
+	query();
+	document.write(`总耗时${t}s`);
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>倒计时自动关闭/跳转页面</title>
+<meta charset="utf-8" />
+
+</head>
+<body>
+	<span>5秒钟后自动关闭</span><br>
+	<a href='javascript:myClose();'>留在本页</a>
+  <script>
+	  function task(){
+		//获得span
+		var span=document.getElementsByTagName('span')[0];
+		//获得数字
+	    var  n=parseInt(span.innerHTML);
+	    n--;
+		//如果n到0,就关闭窗口
+		if(n==0){
+			window.close();
+		}
+		span.innerHTML=`${n}秒钟后自动关闭`;
+	  }
+	  var s=setInterval(task,1000);//2.启动定时器
+	  function myClose(){//3.停止定时器
+		  clearInterval(s);
+	  }
+  </script>
+</body>
+</html>

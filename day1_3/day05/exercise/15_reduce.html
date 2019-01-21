@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//prev相当于一个捐款箱
+	//查找每个元素出现的次数
+	var str='helloworld you nicer';
+	//ele依次拿到每一个元素字母
+	var result=str.split('').reduce(function(prev,ele){
+		//prev[ele]
+		if(prev[ele]==undefined){
+			//一开始prev['h'],没有该属性，强行赋值为1
+			prev[ele]=1;
+		}else{
+			//有该属性，进行记录++ 
+			prev[ele]++;
+		}
+		return prev;
+	},{});//prev={ }
+	console.log(result);
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	
+	"use strict";
+	function Emp(a,b,c,d){
+		Object.defineProperties(this,{
+		eid:{
+			value:a,
+			writable:false,
+			enumerable:true,
+			//configurable:false
+		},
+		ename:{
+			value:b,
+			writable:true,
+			enumerable:true,
+			//configurable:false
+		},
+		salary:{
+			value:c,
+			writable:true,
+			enumerable:false,
+			//configurable:false
+		},
+		_age:{
+			//value:d,
+			writable:true,
+			enumerable:false,
+			//configurable:false
+		},
+		});
+		this.age=d;
+		//Object.preventExtensions(this);
+		//阻止对对象属性的删除以及对象属性的扩展(添加新的属性)
+		Object.seal(this);
+	}
+
+	//由于是对访问器属性操作，所以不能够用Emp.prototype.age自行添加
+	//应该用以下方法进行操作
+	Object.defineProperty(Emp.prototype,'age',{
+			get:function(){
+				return this._age;
+			},
+			set:function(value){
+				if(value>=18&&value<=65){
+					this._age=value;
+				}else{
+					throw Error('年龄超出范围');
+				}
+			},
+			enumerable:true,
+			configurable:false
+	});
+	//一开始年龄就出错了--解决办法--函数内部this.age=age强制调用set方法
+	var eric=new Emp(1001,'艾瑞克',12000,25);
+	//eric.eid=1002;
+	delete eric.ename;
+	for(var key in eric){
+		console.log(`${key}:${eric[key]}`);
+	}
+	//eric.Age=45;
+	console.log(eric);
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.创建AJAX对象
+        //高版本浏览器，标准创建
+        var xhr=new XMLHttpRequest();
+        //console.log(xhr);
+        //IE8以下创建
+        //  var xhr=new ActiveXObject("Microsoft.XMLHttp");
+        //  console.log(window.XMLHttpRequest());
+    //2.接收响应(监听器)---绑定监听事件
+    //关注响应-->激发一个事件
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&&xhr.status==200){
+            //接收响应
+            var result=xhr.responseText;
+            console.log(result);
+        }
+    }
+    //3.打开链接,创建请求
+    xhr.open('get','url',true);
+    //4.发送请求
+    //xhr.send();
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	.parent{
+/*	2.float: left;*/
+	width: 700px;
+/*	1.height: 208px;*/
+/*	3.overflow:hidden;*/
+
+	overflow:auto;
+	border:10px solid #000; 
+	}
+	.d1{
+	float: left;
+	width: 200px;
+	height: 200px;
+	border:2px solid #f00;
+	margin:2px;
+	}
+	.d2{
+	//没设置宽度，默认跟父级元素宽度一致
+	//高度随自身内容
+	//由于清除了前面元素浮动的影响，该将不再被压住，呈现在后面，所以父级元素就有了高度
+	clear:both;
+	}
+	
+	</style>
+ </head>
+ <body>
+  <div class="parent">
+  	<div class="d1"></div>
+  	<div class="d1"></div>
+  	<div class="d1"></div>
+  	<div class="d2"></div>
+  </div>
+   <script></script>
+ </body>
+</html>

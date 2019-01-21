@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//排序之后相邻去重法--->比较前面一个值就可以进行去重-->将不同的值加入到一个新的数组中去
+	let arr = ['a', 'b', 'a', 'b', 'c', 'e', 'd', 'e', 'c', 'd', 'd', 'd', 'd'];
+	let result = arr.sort().reduce((accumulator, current) => {
+    const length = accumulator.length
+    if (length === 0 || accumulator[length - 1] !== current) {
+        accumulator.push(current);
+    }
+    return accumulator;
+	}, []);
+	console.log(result); //['a','b','c','d','e']
+	
+	
+	
+	
+	</script>
+</body>
+</html>

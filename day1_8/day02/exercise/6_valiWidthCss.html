@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>实现带样式的表单验证</title>
+	<link rel="Stylesheet" href="css/5.css" />
+ </head>
+ <body>
+	<form id="form1">
+		<h2>增加管理员</h2>
+		<table>
+			<tr>
+				<td>姓名：</td>
+        		<td>
+					<input name="username"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_info">
+						10个字符以内的字母、数字或下划线的组合
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" name="pwd"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_info">6位数字</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+					<input type="submit" value="保存"/>
+					<input type="reset" value="重填"/>
+				</td>
+			</tr>				
+	    </table>
+	</form>
+	<script>
+	//1.查找触发事件的元素
+	//查找姓名的文本框：
+	var txtName=document.getElementsByName('username')[0];//[input]
+	var txtPwd=document.getElementsByName('pwd')[0];
+	console.log(txtName);
+	console.log(txtPwd);
+	//2.绑定事件函数 
+	//给txtName绑定事件
+	//var a=b=3;连续赋值，使用相同的代码
+	txtName.onfocus=txtPwd.onfocus=function (){
+		var txt=this;
+		//找到对应的div txt的父元素的下面第一个兄弟元素的第一个子元素div
+		var div=txt.parentNode.nextElementSibling.children[0];
+		//修改div的vali_info属性,让其内容显示
+		div.className='';
+		//修改当前触发事件元素的边框样式txt_focus
+		txt.className='txt_focus';
+	}
+	//给txtPwd绑定事件
+	/*txtPwd.onfocus=function (){
+		var txt=this;
+		//找到对应的div txt的父元素的下面第一个兄弟元素的第一个子元素div
+		var div=txt.parentNode.nextElementSibling.children[0];
+		//修改div的vali_info属性,让其内容显示
+		div.className='';
+	}*/
+	//3.查找修改的元素
+	//4.修改元素
+	
+	
+	
+	
+	
+	</script>
+ </body>
+</html>

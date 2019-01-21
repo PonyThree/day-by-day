@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">Lorem</div>
+
+<input type="button" value="打印" onclick="show()">
+<input type="button" value="修改" onclick="upDate()">
+<input type="button" value="插入" onclick="insert()">
+
+</body>
+<script>
+    function show(){
+        console.log(d1.innerHTML);
+    }
+    function upDate(){
+        d1.innerHTML='大家好,我是渣渣辉~~~';
+    }
+    function insert(){
+        d1.innerHTML=`<table border="1" borderColor="pink" cellspacing="0" width="300px" height="300px">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>`;
+    }
+</script>
+</html>

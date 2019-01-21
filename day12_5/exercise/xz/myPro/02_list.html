@@ -1,0 +1,73 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body onload='get_list()' >
+	<table border='1' borderColor='#f66' cellspacing='0' align='center'>
+		<thead>
+			<tr>
+				<th>登录名称</th>
+				<th>电子邮箱</th>
+				<th>联系方式</th>
+				<th>用户姓名</th>
+				<th>用户性别</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		
+		<tbody id='list'>
+		</tbody>
+	</table>
+  
+   <script>
+	function get_list(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function (){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseText;
+				//得到的是一个JSON
+				var arr=JSON.parse(result);
+				for(let i=0;i<arr.length;i++){	
+					var sex=(arr[i].gender=='1')?'男':'女';
+					//d1.innerHTML+="<tr><td>"+arr[i].uname+"</td>"+"<td>"+arr[i].upwd+"</td></tr>";
+					list.innerHTML+=`<tr>
+						<td>${arr[i].uname}</td>
+						<td>${arr[i].email}</td>
+						<td>${arr[i].phone}</td>
+						<td>${arr[i].user_name}</td>
+						<td>${sex}</td>
+						<td>
+							<a href="#">删除</a>
+							<a href="#">修改</a>
+						</td>
+					</tr>`;
+				}
+			}
+		}
+		xhr.open('get','/mypro/getlist',true);
+		xhr.send(null);
+	}
+   
+   </script>
+ </body>
+</html>

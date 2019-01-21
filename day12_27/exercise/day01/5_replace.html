@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//str是不可变长类型，所以拼接时是无法直接拼接的，而是放到一个更大的容器中拼接的
+		/* var a='hello', b='world' 实际上是' '字符串空加入的a和b*/
+		//所有字符串的API都是无权修改字符串的，必须用一个变量来接收
+		var str=prompt("输入消息的内容");
+		//var str="老师:用小红 我的 朋友。 小亮:小红是我的朋友。 小然:朋友!小红是我的! ";
+		var names=str.match(/小[\u4e00-\u9fa5]/ig);
+		str=str.replace(/小[\u4e00-\u9fa5]/ig,'**');
+		//sconsole.log(str);
+		//console.log(`共返回了${names.length}处敏感词`);
+		//防止用户输入的内容不含敏感词。此时用三目判断敏感词次数，避免程序出错，返回null
+		console.log(`共替换了${names!=null?names.length:0}`);
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var msg=prompt("输入消息的内容");
+		//index只能够查找到第一个
+		var i=msg.indexOf("卧槽");
+		if(i!=-1){
+			document.write(`<h1 style='color:red'>在位置${i}发现敏感词</h1>`);
+			document.write(msg.replace(/([我卧喔握]|wo)([草艹操槽]|cao)/ig,'**'));
+			}
+		}else{
+			document.write("<h1>李然说："+msg+"</h1>");
+		}
+	</script>
+</body>
+</html>

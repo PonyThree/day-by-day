@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Plane(fname,speed,score){
+		this.fname=fname;
+		this.speed=speed;
+		this.score=score;
+	}
+	Plane.prototype={
+		fly:function(){
+			console.log(`${this.fname}以时速${this.speed}飞行`);
+		},
+		getScore:function(){
+			console.log(`击落${this.fname}得${this.score}分`);
+		}
+
+	};
+	var f16=new Plane('F16',1000,5);
+	f16.fly();
+	f16.getScore();
+	function Bee(bname,speed,award){
+		this.bname=bname;
+		this.speed=speed;
+		this.awrad=award;
+	}
+	Bee.prototype={
+		fly:function(){
+			console.log(`${this.bname}以时速${this.speed}飞行`);
+		},
+		getAward:function(){
+			console.log(`击落${this.bname}奖励${this.awrad}`);
+		}
+	};
+	var bee=new Bee('小蜜蜂','50','汉堡');
+	bee.fly();
+	bee.getAward();
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

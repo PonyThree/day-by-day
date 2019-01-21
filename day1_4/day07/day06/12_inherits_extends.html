@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*function Enemy(fname,speed){
+		this.fname=fname;
+		this.speed=speed;
+	}
+	Enemy.prototype={
+		fly(){
+			console.log(`${this.fname}以时速${this.speed}飞行`);
+		}
+	};
+	function Plane(fname,speed,score){
+		Enemy.call(this,fname,speed);
+		this.score=score;
+	}
+	Plane.prototype={
+		getScore(){
+			console.log(`击落了${this.fname}得${this.score}分`);
+		}
+	};
+	Object.setPrototypeOf(Plane.prototype,Enemy.prototype);
+	var f16=new Plane('F16',1000,50);
+	f16.fly();
+	f16.getScore();*/
+	//ES6新的写法
+	class Enemy{
+		//构造函数
+		constructor(fname,speed){
+		this.fname=fname;
+		this.speed=speed;
+		}
+		//原型对象
+		fly(){
+			console.log(`${this.fname}以时速${this.speed}飞行`);
+		}
+	}
+	//此时使用extends继承父类构造函数
+	class Plane extends Enemy{
+		constructor(fname,speed,score){
+			//使用super代替构造函数调用
+			super(fname,speed);
+			this.score=score;
+			}
+		getScore(){
+			console.log(`击落了${this.fname}得${this.score}分`);
+		}
+	}
+	var f16=new Plane('F16',1000,50);
+	f16.fly();
+	f16.getScore();
+	class Xmf extends Enemy{
+		constructor(fname,speed,award){
+			super(fname,speed);
+			this.award=award;
+		}
+		getAward(){
+			console.log(`${this.fname}得到奖励${this.award}`);
+		}
+	}
+	var xmf=new Xmf('小蜜蜂',50,'汉堡');
+	xmf.fly();
+	xmf.getAward();
+	</script>
+</body>
+</html>

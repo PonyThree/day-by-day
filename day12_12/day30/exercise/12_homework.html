@@ -1,0 +1,242 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	body{
+	background-color: #f5f5f5;
+	font: 12px "simhei", Arial, Helvetica, sans-serif;
+    color: #666;
+	}
+	ul li{
+	list-style-type:none;
+	}
+	ul.foot_box{
+	width: 1004px;
+	height:82px;
+	margin: 43px auto 74px;
+	}
+	ul.foot_box li{
+	position:relative;
+	float: left;
+	width: 65px;
+	height: 80px;
+	margin:0 93px;
+	background-color:pink;
+	text-align:center;
+	}
+	ul.foot_box li:hover{ 
+	left:10px;
+	}
+	.fool1{
+	width: 1000px;
+	margin:24px auto 10px;
+/*	background-color: pink;*/
+	}
+	.title{
+	font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+	}
+	.title >img{
+	margin-bottom: -5px;
+    margin-right: 10px;
+	}
+	.pro_content{
+	width: 100%;
+	height: 675px;
+/*	background-color: #aff;*/
+	}
+	#container1{
+	float:left;
+/*	margin-right: 10px;*/
+    width: 609px;
+    height: 377px;
+	background-color:#E8E8E8;
+	}
+
+	.pro_content .content{
+	float:left;
+	width: 225px;
+    height: 243px;
+	margin:30px;
+	}
+	.pro_content .img{
+	float:right;
+	width:304px;
+	height: 330px;
+	margin:30px 20px 0 0;
+	}
+	#container1 img{
+	width: 95%;
+	transition:1s linear;
+	}
+	#container1 .img:hover img{
+	width:105%;
+	}
+	.content h3{
+	font-size: 32px;
+    color: #333;
+	}
+	.content .details{
+	font-size: 12px;
+    margin-bottom: 24px;
+	}
+	.content .price{
+	font-size: 24px;
+    color: #0AA1ED;
+    margin-bottom: 12px;
+	}
+	.content .btn{
+		width: 130px;
+		height: 40px;
+		line-height: 40px;
+		border:0;
+		outline:none;
+		background: linear-gradient(to bottom, #27b1f6 0%, #0aa1ed 100%);
+		text-align: center;
+		color: #fff;
+		font-size: 16px;
+		border-radius: 2px;
+		cursor: pointer;
+	}
+    #container2{
+	position:relative;
+	float:right;
+	width: 381px;
+    height: 377px;
+	background-color:#E8E8E8;
+	}
+	#container2 .content{
+	position:absolute;
+	left:0px;
+	z-index:4;
+	 }
+	#container2 .img{
+	position:absolute;
+	top:0px;
+	right:-8px;
+	z-index:2;
+	}
+	#container2 .img img{
+	float:right;
+	width:80%;
+	margin-top: 70px;
+	transition:1s linear;
+	}
+	#container2 .img:hover img{
+	width:90%;
+	}
+/*	底部小四块样式*/
+	.pro_content  .list{
+	float:left;
+	width:1000px;
+	height:235px;
+	margin-top:10px;
+	background-color:pink;
+	}
+
+
+	</style>
+ </head>
+ <body>
+<!-- 首页推荐/1F布局 -->
+	<div class="fool1">
+        <!-- 头部标题 -->
+		<h3 class="title">
+			<img src="img/computer_icon.png" alt="">
+			首页推荐 /1F
+		</h3>
+     <!--图片内容展示区域 -->
+		<div class="pro_content">
+     <!--左边的第一块区域 -->
+			<div id="container1">
+				<table></table>
+				<div class="content">
+						<h3>Apple MacBook Air系列</h3>
+						<p class='details'>酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+						<p class='price '>￥6988.00</p>
+						<input type="button" value="查看详情" class='btn'>
+				</div>
+				<div class="img">
+					<img src="img/study_computer_img1.png" alt="">
+				</div>
+			</div>
+			<div id="container2">
+				<div class="content">
+						<h3>小米Air 金属超 轻薄</h3>
+						<p class='details'>酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡</p>
+						<p class='price '>￥3488.00</p>
+						<input type="button" value="查看详情" class='btn'>
+				</div>
+				<div class="img">
+					<img src="img/study_computer_img2.png" alt="">
+				</div>
+			</div>
+	<!--底下小四块，左边第一块 -->
+			<ul class='list'>
+				<li class="list1">
+					<div class="info"></div>
+					<div class="list_img"></div>
+				</li>
+				<li class="list2">
+					<div class="info"></div>
+					<div class="list_img"></div>
+				</li>
+				<li class="list3">
+					<div class="info"></div>
+					<div class="list_img"></div>
+				</li>
+				<li class="list4">
+					<div class="info"></div>
+					<div class="list_img"></div>
+				</li>
+			</ul>
+		</div>
+	</div>	
+<!-- 	底部品质保障 -->
+    <ul class="foot_box">
+		<li>
+			<img src="img/icon1.png" alt="">
+			<p>品质保证</p>
+		</li>
+		<li>
+			<img src="img/icon2.png" alt="">
+			<p>私人订制</p>
+		</li>
+		<li>
+			<img src="img/icon3.png" alt="">
+			<p>学员特供</p>
+		</li>
+		<li>
+			<img src="img/icon4.png" alt="">
+			<p>专属特权</p>
+		</li>
+	</ul>
+    <script></script>
+ </body>
+</html>

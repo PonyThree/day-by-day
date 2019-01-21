@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var str='明明你也很爱我，没理由爱不到结果，可是你也不恨我.....明明你也很爱我，没理由爱不到结果,恨你爱你念你';
+	var reg=/明明|恨/g;
+	var arr=reg.exec(str);
+	//arr是一个关联数组---第一个是敏感词 第二个是
+	console.log(arr);
+	document.write(`在${arr['index']}位置发现敏感词${arr[0]}<br>`);
+	//通过一个循环来查找所有的明明以及位置
+	do{
+		var arr=reg.exec(str);
+		//先判断是否查到，没查询到将返回一个null
+		if(arr!=null){
+		document.write(`在${arr['index']}位置发现敏感词${arr[0]}<br>`);
+		}
+	}while(arr!=null)//退出条件--当为null时 不为null时就继续执行
+	
+	</script>
+</body>
+</html>

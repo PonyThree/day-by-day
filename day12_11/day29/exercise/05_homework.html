@@ -1,0 +1,120 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+		*{
+		padding:0;
+		margin:0;
+		}
+		body{
+		font: 12px "simhei", Arial, Helvetica, sans-serif;
+		}
+		.wrap{
+		overflow:hidden;
+		content:'';
+		width: 1000px;
+		height:auto;
+		margin:20px auto;
+		}
+		#container1{
+		float:left;
+		width: 610px;
+		height: 370px;
+		background:#E8E8E8 url('img/study_computer_img1.png') no-repeat 215px 63px /60%;
+		transition: 1s;
+		}
+		#container1:hover{
+		background-size:70%;
+		background-position:170px 40px;
+		}
+		#container2{
+		float:right;
+		width: 381px;
+		height: 370px;
+		background:#E8E8E8 url('img/study_computer_img2.png') no-repeat 113px 160px /60%;
+		transition: 1s;
+		}
+		#container2:hover{
+		background-size:70%;
+		background-position:100px 140px;
+		}
+		#content{
+		width: 245px;
+		height: 243px;
+		margin:55px 0 0 30px;
+		} 
+		#content h3{
+		width:245px;
+		height: 76px;
+		color: #333;
+		font-size:29px;
+		font-weight:500;
+		}
+		p.details{
+		font-size: 12px;
+		margin-bottom: 24px;
+		}
+		p.price{
+		font-size: 24px;
+		color: #0AA1ED;
+		margin-bottom: 12px;
+		}
+		input.btn{
+		width: 130px;
+		height: 40px;
+		line-height: 40px;
+		border:0;
+		outline:none;
+		background: linear-gradient(to bottom, #27b1f6 0%, #0aa1ed 100%);
+		text-align: center;
+		color: #fff;
+		font-size: 16px;
+		border-radius: 2px;
+		cursor: pointer;
+		}
+	
+	</style>
+ </head>
+ <body>
+ <div class="wrap">
+	  <div id="container1">
+		<table></table>
+		<div id="content">
+				<h3>Apple MacBook Air系列</h3>
+				<p class='details'>酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+				<p class='price '>￥6988.00</p>
+				<input type="button" value="查看详情" class='btn'>
+		</div>
+	  </div>
+	  <div id="container2">
+		<table></table>
+		<div id="content">
+				<h3>小米Air 金属超 轻薄</h3>
+				<p class='details'>酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡</p>
+				<p class='price '>￥3488.00</p>
+				<input type="button" value="查看详情" class='btn'>
+		</div>
+	  </div>
+  </div>
+   <script></script>
+ </body>
+</html>

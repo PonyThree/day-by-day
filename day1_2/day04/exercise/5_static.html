@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Product(){
+		
+	}
+	Product.prototype={
+		save:function(){
+			console.log("保存一个新创建的商品到数据库中");
+		}
+	}
+	var p1=new Product();
+	p1.save();//实例调用法--调用方法之前必须创建实例对象
+	Product.getId=function (){
+		console.log('查询了一个商品的id号');
+	}
+	Product.getId();//静态方法调用---调用静态方法不需要创建子对象
+
+	
+	
+	
+	
+	</script>
+	
+</body>
+</html>

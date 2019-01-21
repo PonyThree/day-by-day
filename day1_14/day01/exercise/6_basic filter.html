@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8" />
+ <title></title>
+</head>
+<body>
+  <h3>基本过滤选择器.</h3>
+  <ul>
+    <li>child1-basic0</li>
+    <li>child2-basic1</li>
+    <li>child3-basic2</li>
+  </ul>
+  <ul>
+    <li>child1-basic3</li>
+    <li>child2-basic4</li>
+    <li>child3-basic5</li>
+  </ul>
+  <ul>
+    <li>child1-basic6</li>
+  </ul>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+  //jquery封装的都是下标从0开始的--通过底层的 js代码封装实现的
+    //查找第一个li
+    $('li:first').css('background','blue');
+    //查找最后一个li
+    $ ('li:last').css('border','3px dashed red');
+    //查找处于偶数位置的li
+    $('li:even').css('box-shadow','0px 1px 4px pink inset');
+    //查找第2个li
+    $('li:eq(1)').css('background','#f66');
+  </script>
+</body>
+</html>

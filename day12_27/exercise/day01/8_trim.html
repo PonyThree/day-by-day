@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var str=' 	you can you up	 ';
+	//删除开头的空格
+	function ltrim(str){
+		str=str.replace(/^\s+/ig,'');
+		return str;
+	}
+	console.log(ltrim(str));
+	//删除结尾的空格
+	function rtrim(str){
+		str=str.replace(/\s+$/ig,'');
+		return str;
+	}
+	console.log(rtrim(str));
+	//同时删除开头和结尾的空格
+	function trim(str){
+		str=str.replace(/^\s+|\s+$/ig,function(keywords){
+			console.log(keywords);
+			keywords='';
+			return keywords;
+		});
+		return str;
+	}
+	console.log(trim(str));
+	
+	</script>
+</body>
+</html>

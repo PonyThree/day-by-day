@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>	
+	var 商店='公园的商店';
+	var 面包='公园的面包';
+	function 野餐(){
+		var 面包='自家带的面包';
+		document.write(`吃${面包}<br>`);
+		document.write(`去${商店}买东西<br>`);
+	}
+	野餐();
+	/*
+	*野餐的函数作用域对象:{
+		面包:'自家带的面包'
+	}
+	*window全局作用域:{
+		商店:'公园的商店',
+		面包:'公园的面包'
+	}
+	*function js(){
+		var total=1000;
+		return function 孩子花压岁钱(x){
+			total=total-x;
+			console.log(`花了${x}元,还剩${total}元`);
+		}
+	}
+	 js()(100);
+	*
+	*/
+	</script>
+</body>
+</html>

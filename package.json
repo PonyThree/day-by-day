@@ -1,0 +1,25 @@
+{
+  "name": "ponywei",
+  "version": "1.0.0",
+  "description": "this is a test project from ponywei",
+  "main": "app.js",
+  "scripts": {
+    "test": "node ./test.js",
+	"start":"node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.sinacloud.com/ponywei"
+  },
+  "keywords": [
+    "tedu",
+    "test",
+    "node",
+    "sae"
+  ],
+  "author": "ponywei",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

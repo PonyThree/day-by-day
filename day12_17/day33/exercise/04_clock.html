@@ -1,0 +1,83 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	a{
+	text-decoration:none;
+	}
+	ul li{
+	list-style-type:none;
+	}
+	#clock{
+	position: relative;
+	width: 400px;
+	height: 400px;
+	margin:200px auto;
+	border:6px solid #f00;
+	border-radius:50%;
+	background:url('img/clock.jpg') center center/cover no-repeat;
+	}
+	#s{
+	position: absolute;
+	width: 10px;
+	height: 100px;
+	background-color: #faf;
+	top:100px;
+	left:195px;
+	z-index:2;
+	transform-origin:center bottom;
+	animation:turn 60s linear 0s 1 ;
+	}
+
+	@keyframes turn{
+	0%{
+	transform:rotate(0deg);
+
+	}
+	100%{
+
+	transform:rotate(360deg);
+	}
+	}
+	#m{
+	position: absolute;
+	width: 10px;
+	height: 60px;
+	background-color: #afa;
+	top:140px;
+	left:195px;
+	z-index:1;
+	}
+	</style>
+ </head>
+ <body>
+  <div id="clock">
+	<div id="m"></div>
+	<div id="s"></div>
+  </div>
+   <script></script>
+ </body>
+</html>

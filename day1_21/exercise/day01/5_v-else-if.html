@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<!-- 2.定义页面view -->
+	<div id="app">
+		<!-- 如果pm25<100,则显示img 1.png -->
+		<img v-if='pm25<100'src="img/1.png" alt="">
+		<!-- 如果pm25<200,则显示img 2.png -->
+		<img v-else-if='pm25<200'src="img/2.png" alt="">
+		<!-- 如果pm25<300,则显示img 3.png -->
+		<img v-else-if='pm25<300'src="img/3.png" alt="">
+		<!-- 否则,则显示img 4.png -->
+		<img v-else src="img/4.png" alt="">
+	</div>
+	<!-- 3.定义数据模型和控制器对象 -->
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				pm25:100
+			}
+			
+		})
+		setInterval(function(){
+			vm.pm25=Math.random()*400;	
+		},1000);
+	</script>
+</body>
+</html>

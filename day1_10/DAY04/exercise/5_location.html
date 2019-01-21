@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>事件处理</title>
+<meta charset="utf-8" />
+
+</head>
+<body>
+  <a href="#top">返回顶部</a>
+ 	<form>
+		姓名:<input name="username"/><br>
+		密码:<input type="password" name="pwd"/><br>
+    爱好:<input type="checkbox" name="favs" value="running" id='running'/><label for="running">跑步</label>
+          <input type="checkbox" name="favs" value="swimming" id='swimming'/><label for="swimming">游泳</label>
+          <input type="checkbox" name="favs" value="basketball" id='basketball'/> <label for="basketball">篮球</label>
+          <br>
+		<input type="submit"/>
+	</form>
+</body>
+<script>
+
+console.log(location.href);
+//"http://127.0.0.1:5500/DAY04/exercise/5_location.html?username=ponywei&pwd=123456&favs=swimming&favs=basketball"
+console.log(location.host);
+//"127.0.0.1:5500"
+console.log(location.hostname);
+//"127.0.0.1"
+console.log(location.port);
+//"5500"
+console.log(location.hash);
+//""
+console.log(location.search);
+//"?username=ponywei&pwd=123456&favs=swimming&favs=basketball"
+
+
+</script>
+</html>

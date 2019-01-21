@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var lilei={
+		sname:'lilei',
+		sage:11
+	};
+	function clone(obj){
+		var newObj={};
+		for(var key in obj){
+			newObj[key]=obj[key];
+			//newObj.key=obj.key;//强制给新对象添加属性newObj.key
+			//newObj['key']=obj['key'];这种情况与上面情况效果一样
+			//也就是说obj['key']=onj.key此时已经是一个确定的属性名key，而不再是一个变量了！！!
+		}
+		return newObj;
+	}
+	var newObj=clone(lilei);
+	//console.log(lilei);
+	console.log(newObj);
+
+	</script>
+</body>
+</html>

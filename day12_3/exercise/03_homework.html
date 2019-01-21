@@ -1,0 +1,38 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+	<div id="d1">大家好,我是渣渣辉,接下来即将开始我的变变变~~~</div>  
+	<input type="button" value="打印内容" onclick='show()'>
+	<input type="button" value="随机变" onclick='startChange()'>
+   <script> 
+		function show(){
+			console.log(d1.innerHTML);
+		}
+		function startChange(){
+			d1.innerHTML=`<p>随机变</p>`;
+		}
+   </script>
+ </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//返回到查找到的敏感词的位置---只能查找到第一个敏感字符
+		var msg=prompt("输入消息的内容");
+		var i=msg.search(/([我卧喔握]|wo)([草艹操槽]|cao)/i);
+		console.log(i);
+	</script>
+</body>
+</html>

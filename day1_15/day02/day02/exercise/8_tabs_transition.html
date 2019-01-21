@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+	<style>
+		.nav{position:relative}
+		.tabs{list-style:none; padding:0}
+		.tabs a{
+			text-decoration:none;
+			color:#000;
+			width:100px; height:40px; 
+			line-height:40px; text-align:center;
+			display:inline-block;
+		}
+		.tabs>li{
+		  float:left;
+			border-bottom:1px solid #000;
+		}
+		.box{
+			width:100px; height:39px;
+			border:1px solid #000;
+			border-bottom:1px solid #fff;
+			position:absolute; top:0; left:0;
+			transition:1s linear;
+		}
+	</style>
+ </head>
+ <body>
+		<h1>使用属性选择器实现标签页头的切换</h1>
+		<div class="nav">
+			<ul class="tabs">
+				<li><a href="#">十元套餐</a></li>
+				<li><a href="#">二十元套餐</a></li>
+				<li><a href="#">三十元套餐</a></li>
+			</ul>
+			<div class="box"></div>
+		</div>
+		<script src='js/jquery-1.11.3.js'></script>
+		<script>
+		//1.查找绑定事件的元素
+		$('ul.tabs>li>a')
+		//2.绑定事件函数
+		.click(function(e){
+			e.preventDefault();//阻止a标签的链接到顶层去，出现卡顿
+			//3.查找要修改的元素
+			/*var $a=$(this);
+			//查找当前li的下标i
+			var i=$a.parent().index();*/
+			//如果直接a.index(),所有的a下标将会返回0
+			var i=$('ul.tabs>li>a').index(this);
+			//div的left=每个li的宽度100*当前li的小标
+			$('div.box').css('left',100*i);
+		//4.修改元素
+		})
+		
+		
+		
+		
+		
+		
+		</script>
+ </body>
+</html>

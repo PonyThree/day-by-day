@@ -1,0 +1,54 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+	<div>用户名称:
+	<input type="text" id='uname'> 
+	</div>
+	<div>用户密码:
+	<input type="password" id='upwd' >
+	</div>
+	<input type='button' value='登录' onclick='login()'>
+	<div id='d1'></div>
+   <script>
+	function login(){
+		//1.创建异步对象 
+		var xhr=new XMLHttpRequest();
+		//2.绑定监听---获取服务器响应回来的数据
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseText;
+				d1.innerHTML=result;
+			}
+		}
+		//3.打开链接，创建请求
+		//url='/demo/login?uname='+un+'&upwd=123'+up
+		xhr.open('get','/demo/login?uname='+uname.value+'&upwd='+upwd.value,true);
+		//4.发送请求
+		//请求主体  get 方法没有请求主体
+		xhr.send(null);		
+	}
+   </script>
+ </body>
+</html>

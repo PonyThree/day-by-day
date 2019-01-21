@@ -1,0 +1,54 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+	用户名称:<input type="text" name="uname" id="uname"><br/>	
+	用户密码:<input type="password" name="upwd" id="upwd"><br/>	
+	用户邮箱:<input type="text" name="email" id="email"><br/>	
+	电话号码:<input type="text" name="phone" id="phone"><br/>	
+	<span align='center'>用户性别:</span>  
+<!-- 	<label for="m">男</label><input type="radio" name="gender" id="m" v> -->
+<!-- 	<label for="f">女</label><input type="radio" name="gender" id="f"><br/> -->
+	<input type="text"  id='gender' ><br/>
+	<input type="submit" value="提交" onclick='register()'>
+   <script>
+		function register(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function (){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					console.log(result);
+				}
+			}
+			var $gender=(gender.value=='男')?'1':'0';
+			xhr.open('post','/mypro/register',true);
+			//修改请求头，可以发送任意文本
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			var formdata='uname='+uname.value+'&upwd='+upwd.value+'&email='+email.value+'&phone='+phone.value+'&gender='+$gender;
+			xhr.send(formdata);
+		}
+   
+   </script>
+ </body>
+</html>

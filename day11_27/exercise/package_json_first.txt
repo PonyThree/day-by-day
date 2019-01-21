@@ -1,0 +1,46 @@
+C:\Users\web\Desktop\nodejs\ponywei>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (ponywei)
+version: (1.0.0)
+description: this is a test project from ponywei
+entry point: (index.js) app.js
+test command: node ./test.js
+git repository: (https://git.sinacloud.com/ponywei)
+keywords: tedu,test,node,sae
+author: ponywei
+license: (ISC)
+About to write to C:\Users\web\Desktop\nodejs\ponywei\package.json:
+
+{
+  "name": "ponywei",
+  "version": "1.0.0",
+  "description": "this is a test project from ponywei",
+  "main": "app.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.sinacloud.com/ponywei"
+  },
+  "keywords": [
+    "tedu",
+    "test",
+    "node",
+    "sae"
+  ],
+  "author": "ponywei",
+  "license": "ISC"
+}
+
+
+Is this ok? (yes)

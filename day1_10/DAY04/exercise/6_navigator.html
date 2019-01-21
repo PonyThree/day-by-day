@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//判断是否启用cookie
+	if(navigator.cookieEnabled){
+		document.write("<h1>"+"以启用cookie, 请妥善选择保存个人信息！"+"</h1>");
+	}else{
+		document.write("<h1>"+"cookie以禁用,无法记住密码！"+"</h1>");
+	}
+	//判断是否安装浏览器的某插件
+	if(navigator.plugins["Chrome PDF Plugin"]===undefined){
+		document.write("<h1>"+"未安装PDF插件,"+"<a href='javascript:;'>"+"点此下载"+"</a></h1>");
+	}else{
+		document.write("<h1>"+"已安装PDF插件!"+"</h1>");
+	}
+	if(navigator.plugins["Shockware Flash"]===undefined){
+		document.write("<h1>"+"未安装Shockware Flash插件,"+"<a href='javascript:;'>"+"点此下载"+"</a></h1>");
+	}else{
+		document.write("<h1>"+"已安装Shockware Flash插件!"+"</h1>");
+	}
+	//以下按钮必须使用IE浏览器
+	//Firefox-->标准IE-->IE11(Trident)-->Opera-->Edge-->Chrome-->Safari
+	//F12->仿真->用户代理字符串->切换五大浏览器:IE Chrome Firefox Safari Opera
+	var ua=navigator.userAgent;
+	document.write("<h1>"+ua+"</h1>");
+
+	var browser,version;
+	//先判断浏览器名称;碰运气
+	//先判断当前ua中是否包含firefox
+	if(/Firefox/.test(ua)){
+		//如果包含说明当前浏览器一定时Firefox
+		browser='Firefox';
+		//接着判断当前ua中是否包含IE
+	}else if(ua.indexOf('IE')!=-1){
+		//如果包含说明当前浏览器一定是IE
+		browser='IE';
+		//如果没有IE,但有Trident
+	}else if(ua.indexOf('Trident')!=-1){
+		//也说明是IE浏览器，且版本一定是11
+		browser='IE',version=11;
+		//接着判断当前ua中是否包含OPR
+	}else if(ua.indexOf('OPR')!=-1){
+		//如果包含说明当前浏览器一定是OPR
+		browser='OPR';
+		//接着判断ua中是否含有Edge
+	}else if(ua.indexOf('Edge')!=-1){
+		//如果包含说明一定是Edge
+		browser='Edge';
+		//接着判断当前ua中是否包含Chrome
+	}else if(ua.indexOf('Chrome')!=-1){
+		//如果包含说明一定是Chrome
+		browser='Chrome';
+		//接着判断当前浏览器是否包含Safari
+
+	}else if(ua.indexOf('Safari')!=-1){
+		browser='Safari';
+	}
+	document.write("<h2>"+browser+"</h2>");
+	//因为Edge已经有version=11,所以只需要处理没确定的
+	if(version===undefined){
+		//获得浏览器的版本号
+		//先获得浏览器名称在ua中的位置i
+		var i=ua.indexOf(browser);
+		//i先跳过浏览器的名称的长度，在多跳过一位(/符号)
+		i+=browser.length + 1;
+		//从版本号所在的位置先后取3为字符串，转为正数
+		version=parseInt(ua.slice(i,i+3));
+	}
+	document.write("<h2>"+version+"</h2>");
+	</script>
+</body>
+</html>	

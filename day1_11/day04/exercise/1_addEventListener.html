@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btnShoot">shoot</button><br>
+    <button id="btnAward">获得跟踪导弹</button><br>
+    <button id="btnBreak">失去跟踪导弹</button><br>
+	<script>
+	btnShoot.onclick=function(){
+		console.log('发射普通子弹...');
+	}
+	function shoot(){
+		alert('发射跟踪导弹...');
+	}
+	btnAward.onclick=function (){
+		btnShoot.addEventListener('click',shoot);
+	}
+	btnBreak.onclick=function(){
+		btnShoot.removeEventListener('click',shoot);
+	}
+	
+	
+	</script>
+</body>
+</html>

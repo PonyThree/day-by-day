@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- 准备:引入vue.js -->
+	<script src='js/vue.js'></script>
+	
+</head>
+<body>
+	<!-- 1.静态页面 ，同时挖窟窿-->
+	<!-- view界面 -->
+	<div id="app">
+		<!-- 这里需要一个用户名uname数据 -->
+		<h1>Welcome ,{{uname}}</h1>
+		<!-- 这里需要一个积分score数据 -->
+		<h2>您的积分是:{{score}}</h2>
+	</div>
+	<script>
+		// 2.定义数据--model--内存中
+		var data={
+			uname:'dingidng',
+			score:3000
+		}
+		// 3.创建vue对象,绑定界面和数据模型
+		// viewModel控制器
+		var vm=new Vue({
+			el:'#app',//element-界面
+			data:data
+		})
+		// 结果:#app中所有的内容和data对象中的所有成员永久绑定在一起;数据会自动加载到页面中对应位置,且之后修改数据，页面自动同步变化
+		//测试:
+		var timer=setInterval(function(){
+			vm.score+=500;//等效于改data.score
+		},1000)
+	</script>
+</body>
+</html>

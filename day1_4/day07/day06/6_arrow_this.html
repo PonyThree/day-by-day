@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var lilei={
+		sname:'Li Lei',
+		friends:['Tom','Jerry','Jack','Rose'],
+		intr:function(){
+			//此时外部的this指向lilei
+			/*this.friends.forEach(function(ele){
+					//内部回调函数的this由于是forEach让他调用,所以此时this指向全局对象Window,所以一开始this.sname为undefined
+					//要想程序运行正确，此时需要改变this的指向，让他指向lilei
+					//document.write(`${this.sname}认识${ele}<br/>`);
+					//1.修改方法为用bind绑定绑定该回调函数
+					document.write(`${this.sname}认识${ele}<br/>`);
+			}.bind(this));//这里的this是函数内部的this，指向lilei*/
+			//修改方法二:通过使用箭头函数，让其回调函数内部的this与外部函数this一致
+			this.friends.forEach((ele)=>{
+				document.write(`${this.sname}认识${ele}<br/>`);
+			})
+		}
+	}
+	
+	lilei.intr();
+	var hmm={
+		sname:'Han Meimei',
+		//由于使用了箭头函数，所以此时函数intr内部与函数外部(全局Window)的this一致,都指向Window
+		//所以this.sname此时为undefined,而不再看函数调用的对象是谁
+		intr:()=>{document.write(`我是${this.sname}`)}
+	}
+	hmm.intr();
+	
+	
+	/*特点: 箭头函数内外的this是同一个/共通的
+  	总结: 如果希望内外this相同时，应该简化
+       如果反而希望内外this不同时，不能简化！
+	   */
+
+	</script>
+</body>
+</html>

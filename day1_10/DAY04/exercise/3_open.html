@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<a href="http://www.tmooc.cn" target='_self'>在本地打开一个新窗口</a>
+	<a href="javascript:open1()">在本地打开一个新窗口</a>
+	<hr/>
+	<a href="http://www.tmooc.cn" target='_blank'>在新窗口打开多个页面</a>
+	<a href="javascript:open2()">在新窗口打开多个页面</a>
+	<hr/>
+	<a href="javascript:open4()">在当前窗口打开，不可逆!!!</a>
+	<hr/>
+	<a href="http://www.tmooc.cn" target='blank'>在新窗口打开一个页面，并且不能返回</a>
+	<a href="javascript:open3()">在新窗口打开一个页面，并且不能返回</a>
+	<script>
+	function open1(){
+		open('http://www.tmooc.cn','_self');
+	}
+	function open2(){
+		open('http://www.tmooc.cn','_blank');
+	}
+	function open3(){
+		open('http://www.tmooc.cn','blank');
+	}
+	function open4(){
+		location.replace('http://www.tmooc.cn');
+	}
+	</script>
+</body>
+</html>

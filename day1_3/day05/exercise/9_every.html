@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var arr1=[2,4,6,4,2];
+	var arr2=[1,2,3,4,5];
+	//判断哪个数组全由偶数组成:
+	//every要求每一个数组元素都满足要求，并返回true/false
+	console.log(
+		arr1.every((ele,i,arr)=>{return ele%2==0}),//true
+		arr2.every((ele,i,arr)=>{return ele%2==0})//false
+	);
+	//判断是否为升序排列 
+	console.log(
+		arr1.every(function(ele,i,arr){
+			return i<arr.length-1?ele<=arr[i+1]:true;
+		}),//false
+		arr2.every(function(ele,i,arr){
+			return i<arr.length-1?ele<=arr[i+1]:true;
+		})//true
+	)
+	</script>
+</body>
+</html>

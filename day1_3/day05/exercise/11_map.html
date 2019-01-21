@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+	*	map(回调函数)不会修改原数组，操作的是原数组副本(新生成的数组)!!!
+步骤：1.创建一个新的空数组[ ]
+	  2.map遍历数组中的每一个数据，对其进行操作，返回值给新数组
+	*
+	*/
+	var arr=[1,2,3,4,5];
+	//将原数组中的每一个元素值*2
+	var arr2=arr.map(function(ele,i,arr){
+		return ele*=2;
+	});
+	console.log(arr);
+	console.log(arr2);
+	</script>
+</body>
+</html>

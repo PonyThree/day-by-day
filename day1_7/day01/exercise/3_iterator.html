@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<span>Hello World !</span>
+			<ul id="nav">
+				<li>{{uname}}</li>
+				<li>综艺
+					<ul>
+						<li>跑男</li>
+						<li>{{uname}}</li>
+						<li>极限</li>
+					</ul>
+				</li>
+				<li>剧集</li>
+			</ul>	
+	<script>
+	function getChildren(parent){
+		//1.先仅遍历当前元素的直接子元素
+		//1.1获得指定的父元素parent的直接子元素
+		var children=parent.children;
+		for(var child of children){
+			//console.log(child.nodeName);
+			if(child.innerHTML==='{{uname}}'){
+				child.innerHTML=uname;
+			}
+			//2.对每一个直接子元素调用和父元素完全相同的操作
+			arguments.callee(child);
+;		}
+	}
+	window.onload=function(){getChildren(document.body)};
+	var uname='ponywei';
+	
+	</script>
+</body>
+</html>

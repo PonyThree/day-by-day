@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*function pay(){
+		console.log('手机支付...');
+	}
+	function pay(money){
+		console.log('现金支付...');
+	}
+
+	function pay(cardId,pwd){
+		console.log('刷卡支付...');
+	}
+	
+	pay();
+	pay(100);
+	pay('6225 1234','1234');*/
+	function pay(){
+		if(arguments.length==0){
+			console.log(`手机支付..`);
+		}else if(arguments.length==1){
+			console.log(`现金支付...,收款${arguments[0]}`);
+		}else{
+			console.log(`刷卡支付...,从您的卡号为${arguments[0]}的银行卡中扣款成功!`);
+		}
+		console.log(arguments);
+	}
+	pay();
+	pay(100);
+	pay('6225 1234','1234');
+	</script>
+</body>
+</html>

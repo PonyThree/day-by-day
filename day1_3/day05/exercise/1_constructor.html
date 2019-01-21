@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	"use strict";
+	function Emp(a,b,c,d){
+		Object.defineProperties(this,{
+		eid:{
+			value:a,
+			writable:false,
+			enumerable:true,
+			configurable:false
+		},
+		ename:{
+			value:b,
+			writable:true,
+			enumerable:true,
+			configurable:false
+		},
+		salary:{
+			value:c,
+			writable:true,
+			enumerable:false,
+			configurable:false
+		},
+		_age:{
+			//value:d,
+			writable:true,
+			enumerable:false,
+			configurable:false
+		},
+		age:{
+			get:function(){
+				return this._age;
+			},
+			set:function(value){
+				if(value>=18&&value<=65){
+					this._age=value;
+				}else{
+					throw Error('年龄超出范围');
+				}
+			},
+			enumerable:true,
+			configurable:false
+		}
+		});
+		this.age=d;
+	}
+	//一开始年龄就出错了--解决办法--函数内部this.age=age强制调用set方法
+	var eric=new Emp(1001,'艾瑞克',12000,-2);
+	//eric.eid=1002;
+	//delete eric.ename;
+	for(var key in eric){
+		console.log(`${key}:${eric[key]}`);
+	}
+	//eric.age=-2;
+	console.log(eric);
+	</script>
+</body>
+</html>

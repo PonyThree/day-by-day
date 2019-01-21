@@ -1,0 +1,115 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	li{
+	list-style-type:none;
+	}
+	a{
+	text-decoration:none;
+	}
+	#banner{
+	position:relative;
+	width: 1000px;
+	height: 400px;
+	margin:100px auto;
+/*	background-color:pink;*/
+	overflow:hidden;
+	}
+	.list{
+	clear:both;
+	width:4000px;
+	height:400px;
+	}
+	#banner .list li{
+	float: left;
+	width: 1000px;
+	height: 400px;
+	}
+	.bofore,.next{
+	position:absolute;
+	width: 35px;
+	height: 70px;
+	top:0;
+	bottom:0;
+	margin:auto 0;
+	border-radius:6px;
+	}
+	.bofore{
+	left:10px;
+	background:rgba(0,0,0,.1) url(img/arrow-left.png) center center no-repeat;
+	}
+	.next{
+	right:10px;
+	background:rgba(0,0,0,.1) url(img/arrow-right.png) center center no-repeat;
+	}
+	.bofore:hover,.next:hover{
+	background-color: rgba(0,0,0,.2);
+	}
+	.circle{
+	position: absolute;
+	width: 88px;
+	height: 20px;
+	bottom:10px;
+	left:50%;
+	margin-left:-44px;
+	}
+	.circle li{
+	float:left;
+	width: 12px;
+	height: 12px;
+	margin:5px;
+	border-radius:50%;
+	background-color: #fff;
+	}
+	li.active{
+	background: #0AA1ED;
+	}
+	</style>
+ </head>
+ <body>
+   <div id="banner"> 
+	<!--    轮播图片区域 -->
+  	<ul class='list'>
+   		<li><img src="img/banner1.png" alt=""></li> 
+  		<li><img src="img/banner2.png" alt=""></li> 
+   		<li><img src="img/banner3.png" alt=""></li> 
+   		<li><img src="img/banner4.png" alt=""></li> 
+  	</ul>
+	<!-- 	左右按钮区域 -->
+   	<a href="" class='bofore'></a>
+	<a href="" class='next'></a> 
+	<!-- 	底部圆点按钮区域 -->
+	<ul class='circle'>
+   		<li class='active'></li> 
+   		<li></li> 
+   		<li></li> 
+   		<li></li>
+   	</ul>
+   </div> 
+   <script></script>
+ </body>
+</html>

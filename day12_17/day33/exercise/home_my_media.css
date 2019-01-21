@@ -1,0 +1,101 @@
+
+.wrap{
+width: 100%;
+background-color: #eee;
+font:14px/10px '华文彩文';
+}
+.content .img_list:after{
+	display:block;
+	content:'';
+	clear:both;
+}
+/*pc端>=992px*/
+@media screen and (min-width:992px){
+	.name_list{
+	float:left;
+	width: 20%;
+	background-color: pink;
+	}
+	.content{
+	float:left;
+	overflow:hidden;
+	width: 60%;
+	background-color: #ff0;
+	}
+	.content:after{
+	clear:both;
+	display:block;
+	content:'';
+	}
+	.content .img_list{
+	width: 100%;
+	}
+	.content .img_list > li{
+	float: left;
+	width: 25%;
+	font-size:16px;
+	background-color: #aaf;
+	}
+	.r_adv{
+	float:left;
+	width: 20%;
+	}
+}
+/*pad>=768px  pad<=991*/
+@media screen and (max-width:991px) and (min-width:768px){
+	.name_list{
+	float:left;
+	width: 30%;
+	}
+	.content{
+	float:left;
+	width: 70%;
+	}
+	.content .img_list:after{
+	display:block;
+	content:'';
+	clear:both;
+	}
+	.content .img_list li{
+	font-size:16px;
+	background-color: #afa;
+	}
+	.content .img_list li img{
+	float:left;
+	width: 25%;
+	}
+	.r_adv{
+	float:left;
+	width: 25%;
+	display:none;
+	}
+}
+/*phone<=767px*/
+@media screen and  (max-width:767px){
+	.name_list{
+	float:left;
+	width: 100%;
+	background-color: orange;
+	}
+	.content{
+	float:left;
+	width:100%;
+	}
+	.content .img_list:after{
+	display:block;
+	content:'';
+	clear:both;
+	}
+	.content .img_list li{
+	font-size:16px;
+	background-color: #ff0;
+	}
+	.content .img_list li img{
+	float:left;
+	width: 50%;
+	}
+	.r_adv{
+	float:left;
+	width: 100%;
+	}
+}

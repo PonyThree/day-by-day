@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+<script>
+var a=document.createElement('a');
+a.innerHTML='去百度';
+a.href='http://www.baidu.com';
+document.body.appendChild(a);
+var input=document.createElement('input');
+input.type='text';
+document.body.insertBefore(input,a);
+var p=document.createElement('p');
+p.innerHTML='helloworld';
+//p.style.color='orange';
+p.style.cssText='background:red;color:#000;font-size:30px';
+document.body.replaceChild(p,input);
+</script>
+</body>
+</html>

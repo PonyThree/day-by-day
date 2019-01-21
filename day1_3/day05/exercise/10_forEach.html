@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+	*	forEach(回调函数)会修改原数组，操作的是原数组!!!
+		特别注意：
+		forEach()没有返回值return-->直接操作的原数组
+	*
+	*/
+	var arr=[1,2,3,4,5];
+	//将原数组中的每一个元素值*2
+	arr.forEach(function(ele,i,arr){
+		//ele*=2;//传递的是数组的副本，所以对齐数据进行操作 ，不会改变原数组值，例如:var a=3;var b=a;b++;--->结果a的值不变一样,修改的是a的副本(b的值)！！！！
+		//arr[i]=ele*2;//修改的是arr[i]地址，所以原数组值变化
+		arr[i]*=2;
+	});
+	console.log(arr);
+	</script>
+</body>
+</html>

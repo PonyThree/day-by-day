@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/2.css"/>
+
+</head>
+<body>
+	<div id="d1">
+			<div id="d2">
+				<div id="d3">
+				</div>
+			</div>
+	</div>
+	<script>
+
+	d1.onclick=function(e){
+		alert('d1疼');
+	}
+	//事件触发时:d1.onclick(event);实际上有个事件对象
+	d2.onclick=function(e){
+		//停止冒泡
+		e.stopPropagation();
+		alert('d2疼');
+	}
+	d3.onclick=function(e){
+		//停止冒泡
+		e.stopPropagation();
+		alert('d3疼');
+	}
+	
+	
+	
+	</script>
+</body>
+</html>

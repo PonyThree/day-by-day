@@ -1,0 +1,103 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	a{
+	text-decoration:none;
+	}
+	ul li{
+	list-style-type:none;
+	}
+	table{
+	width: 400px;
+	height: 400px;
+	border:1px solid #f00;
+	}
+	tr:first-child{
+	background-color: #aaf;
+	}
+	tr:last-child{
+	background-color: #ffa;
+	}
+	tr:nth-child(3) > td:nth-child(2){
+	background-color: #faa;
+	}
+	div:empty{
+	width: 200px;
+	height: 200px;
+	background-color: #ffa;
+	}
+
+	p:only-child{
+	width: 200px;
+	height: 200px;
+	background-color: #faf;
+	}
+/*	匹配非空的div*/
+	div:not(:empty){
+	width: 200px;
+	height: 200px;
+	background-color: #f00;
+	}
+	table td:not(:first-child){
+	font:italic 24px bold;
+	}
+	</style>
+ </head>
+ <body>
+ <div><p></p></div>
+ <div></div>
+ <div>
+	  <table>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>10</td>
+			<td>11</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>14</td>
+			<td>15</td>
+			<td>16</td>
+		</tr>
+	  </table>
+  </div>
+   <script></script>
+ </body>
+</html>

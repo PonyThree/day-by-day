@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function zan(){
+			var n=0;
+			return function (){
+				n++;
+				console.log(`赞+1,共${n}个赞`);
+			}
+		}
+		var zan=zan();
+		zan();
+		zan();
+		zan();
+		function cai(){
+			var n=0;
+			return function (){
+				n++;
+				console.log(`踩+1,共${n}个踩`);
+			}
+		}
+		var cai=cai();
+		cai();
+		cai();
+		cai();
+	</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+  <input type='button' value='Show' onclick='show()'>
+  <table id='d1' border='1' borderColor='pink' cellsapcing='0' align='center'>
+  
+  </table>
+   <script>
+	function show(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function (){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseText;
+				//console.log(typeof(result));
+				//把json串转化成一个js数组
+				var arr=JSON.parse(result);
+				//1.for循环遍历数组  
+				d1.innerHTML=`<tr>
+					<td>用户编号</td>
+					<td>用户名</td>
+					<td>密码</td>
+					<td>邮箱</td>
+					<td>电话号码</td>
+					<td>头像图片</td>
+					<td>真实姓名</td>
+					<td>性别</td>
+				  </tr>`;
+				for(var i=0;i<arr.length;i++){
+//					d1.innerHTML+="<tr><td>"+arr[i].uname+"</td>"+"<td>"+arr[i].upwd+"</td></tr>";
+					//ES6模板字符串由于里面的/不能被解析，所以需要转义
+					d1.innerHTML+=`<tr><td>${arr[i].uid}<\/td><td>${arr[i].uname}<\/td><td>${arr[i].upwd}<\/td><td>${arr[i].email}<\/td><td>${arr[i].phone}<\/td><td>${arr[i].avatar}<\/td><td>${arr[i].user_name}<\/td><td>${arr[i].gender}<\/td></tr>`;
+				}
+				//var uname='';
+				//2.for in 遍历数组
+				/*for(var i in arr){
+					uname=arr[i].uname;
+					d1.innerHTML+="<tr><td>"+uname+"</td></tr>";
+				}*/
+				//3.forEach((item,index,arr)=>{})遍历数组
+				/*arr.forEach((item,index,arr)=>{
+					d1.innerHTML+="<tr><td>"+item.uname+"</td></tr>";
+					});*/
+				}
+		
+			}
+			xhr.open('get','/demo/userlist',true);
+			xhr.send(null);
+	}
+   
+   </script>
+ </body>
+</html>

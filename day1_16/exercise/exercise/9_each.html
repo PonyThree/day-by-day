@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+  </style>
+</head>
+<body>
+
+<ul id="list">
+  <li>98</li>
+  <li>85</li>
+  <li>33</li>
+  <li>99</li>
+  <li>52</li>
+</ul>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+  //请给每个不足60分的成绩+10分，并将超过90分的成绩用绿色背景标识出来
+  //遍历ul下的所有li
+  $('ul>li').each(function(i,elem){
+    var $elem=$(elem);
+    //否则，如果当前元素的内容>90，当前元素背景变绿
+    if($elem.html()>=90)
+    $elem.css('background','#0f0');
+    //如果当前元素的内容<60，就为其加10分
+    else if($elem.html()<60){
+      var score=parseInt($elem.html());
+      $elem.html(score+10);
+    }
+  })
+
+
+  function add(){
+    var sum=0;
+    //方法一 普通for循环
+    /*for(var i=0;i<arguments.length;i++){
+      sum+=arguments[i];
+    }*/
+    
+    //方法二 jQuery中的$.each()
+    //遍历  回调函数：在每个元素上执行一次
+    //          i->当前的位置
+                //elem->当前的元素值
+    $.each(arguments,function(i,elem){
+      sum+=elem;
+    })
+    //方法三 ES6-->>>>>for-of遍历类数组对象
+    /*for(var elem of arguments){
+      sum+=elem;
+    }*/
+
+    return sum;
+  }
+  console.log(add(1,2,3));
+  console.log(add(1,2,3,4));
+  console.log(add(1,2,3,4,5));
+  console.log(add(1,2,3,4,5,6));
+</script>
+</body>
+</html>

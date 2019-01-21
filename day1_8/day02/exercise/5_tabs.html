@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>读取并修改元素的属性</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/3.css" />
+<style></style>
+
+</head>
+<body>
+	<h2>实现多标签页效果</h2>
+  <div class="tabs">
+    <ul id="tab">
+	<!--使用javacript:;让其形成一个死链接，从而页面不会出现抖动-->
+      <li><a href="javascript:;" data-toggle='tab' data-target='#content1'>10元套餐</a></li>
+      <li><a href="javascript:;" data-toggle='tab' data-target='#content2'>30元套餐</a></li>
+      <li><a href="javascript:;" data-toggle='tab' data-target='#content3'>50元包月</a></li>
+    </ul>
+    <div id="container">
+      <div id="content1">
+        10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+      </div>
+      <div id="content2">
+        30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+      </div>
+      <div id="content3">
+        50元包月详情：<br />&nbsp;每月无限量随心打
+      </div>
+    </div>
+  </div>
+  <script>
+  //1.一开始来让第一个显示
+  //让id为content1的div在最上层
+	document.getElementById('content1').style.zIndex='10';
+	//1.查找绑定事件元素 data-toggle='tab' 
+	var tabs=document.querySelectorAll('[data-toggle=tab]');
+	//2.为每一个a绑定事件函数
+	for(var tab of tabs){
+		tab.onclick=function(){
+			var tab=this;
+			//3.查找修改的元素
+			//查找当前触发事件影响的content
+			var divs=document.querySelectorAll('#container>div');
+			//遍历所有的div,清除所有的z-index
+			for(var div of divs){
+				div.style.zIndex='';
+			}
+			//获得当前修改元素的id
+			var id=tab.getAttribute('data-target');
+			//找到当前tab对应的div
+			var div=document.querySelector(id);
+			//修改其层级z-index
+			div.style.zIndex='10';
+		}
+	}
+  
+  
+  
+  </script>
+</body>
+</html>

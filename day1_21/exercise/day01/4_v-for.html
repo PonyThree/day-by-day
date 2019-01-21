@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+	table,tr,th,td{
+		border:1px solid #000;	
+	}
+	table{
+		width:600px ;
+		text-align:center;
+		margin:0 auto;
+		border-collapse: collapse;
+	}
+	
+	</style>
+	<!-- 1.引入vue.js -->
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<!-- 2.定义页面view -->
+	<div id="app">
+		<ul>
+			<!-- 遍历tasks中每个任务名，每遍历到一个任务，就创建一个li，并替换其中的内容为计算后的结果 -->
+			<li v-for='(task,i) of tasks'>{{i+1}}---{{task}}</li>
+		</ul>
+		<table>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>小计</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- 遍历商品数组products中每个商品对象，每遍历一个商品对象，就会粗昂见一套<tr>及其子元素。 -->
+				<!-- 变量p自动获得 -->
+				<tr v-for='(p,i) in products'>
+					<td>{{i+1}}</td>
+					<td>¥{{p.price.toFixed(2)}}</td>
+					<td>{{p.count}}</td>
+					<td>¥{{(p.price.toFixed(2)*p.count).toFixed(2)}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- 3.定义数据模型和控制对象 -->
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				tasks:[
+					'吃饭','睡觉','打亮亮','再睡觉'
+				],
+				products:[
+					{price:25.10,count:6},
+					{price:12.80,count:16},
+					{price:42.50,count:20},
+					{price:5.36,count:15}
+				]
+
+			}
+		})
+	</script>
+	
+</body>
+</html>

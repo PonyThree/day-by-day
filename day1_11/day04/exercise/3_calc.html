@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<div id="keys">
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>4</button><br>
+			<button>C</button>
+			<button>+</button>
+			<button>-</button>
+			<button>=</button>
+	</div>
+	<textarea id="sc" style="resize:none;width:200px; height:50px;" readonly></textarea>
+	
+	<script>
+	//不管你是否添加onclick,浏览器都存在事件(event)冒泡---只是区别在于你是否绑定了事件函数(看到效果)
+	keys.onclick=function(e){
+		//通过事件冒泡，让点击子元素触发父元素的事件
+		//alert('疼');
+		//e.target指当前点击的子元素对象
+		var btn=e.target;
+		//判断子元素对象是否为btn按钮
+		if(btn.nodeName==='BUTTON'){
+			//如果是,获取子对象按钮的内容
+			var content=btn.innerHTML;
+			switch(btn.innerHTML){
+				//如果点的是c
+				case 'C':
+				//就清空texearea的内容
+				sc.value='';
+				break;
+				//如果点的是=
+				//就计算src的值，用eval
+				case '=':
+				sc.value=eval(sc.value);
+				break;
+				default:
+				//如果点的是1/2/3/4/+/-
+				//就将当前按钮的内容追加到textarea的内容结尾
+				sc.value+=btn.innerHTML;
+			}
+		}//否则什么都不做
+	}
+	
+	</script>
+</body>
+</html>

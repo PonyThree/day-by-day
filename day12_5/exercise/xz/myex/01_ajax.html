@@ -1,0 +1,52 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+	<input type="button" value="ajax" onclick='getMsg()'>
+	<div id='d1'></div>
+   <script>
+	function getMsg(){
+		//1.创建xhr对象
+		var xhr=new XMLHttpRequest(); 
+		//console.log(xhr);
+		//2.绑定监听事件
+		xhr.onreadystatechange=function (){
+			//console.log(xhr.readyState);
+			if(xhr.readyState==4&&xhr.status==200){
+				//console.log(xhr.status);
+				var result=xhr.responseText;
+				//console.log(result);
+				d1.innerHTML=result;
+			}
+		}
+		//3.打开链接，创建请求
+			xhr.open('get','/demo/ajaxdemo',true);
+		//4.发送
+			xhr.send();
+
+	}
+   
+   </script>
+ </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function liang(fun){//异步
+		console.log(`亮起跑...`);
+		setTimeout(function(){
+			console.log(`亮到达终点!`);
+			fun();
+		},6000);
+		
+	}
+	function ran(fun){
+		console.log(`然起跑...`);
+		setTimeout(function(){
+			console.log(`然达到终点!`);
+			fun();
+		},4000);
+		
+	}
+	function dong(){
+		console.log(`东开始起跑...`);
+		setTimeout(function(){
+			console.log(`东到达终点!`);
+		},2000);
+	}
+	liang(function(){//下一步是然
+		ran(function(){//下一步是东
+			dong();
+		});
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+body{
+font:16px '华为彩云';
+padding:0;
+margin:0;
+}
+/*pc>=992px*/
+@media screen and (min-width:992px){
+	.content{
+	color:#f00;
+	background:#000;
+	font-size:14px;
+	}
+	
+}
+/*pc>=768px and pc<=991px*/
+@media screen and (min-width:768px)and (max-width:991px){
+	.content{
+	color:#00f;
+	background:#faa;
+	font-size:24px;
+	}
+}
+/* pc<=767px*/
+@media screen and (max-width:767px){
+	.content{
+	color:#ff0;
+	background:#555;
+	font-size:12px;
+	}	
+}

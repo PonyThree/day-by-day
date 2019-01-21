@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	"use strict";
+	var eric={
+		eid:1001,
+		ename:'艾瑞克',
+		salary:120000
+	};
+	//var miniObj=Object.getOwnPropertyDescriptor(eric,'eid');
+	//eid只读
+	//console.log(miniObj);
+	/*Object.defineProperty(eric,'eid',{
+		writable:false
+	});
+	//不允许遍历---只阻止了for-in遍历，其它遍历可以
+	Object.defineProperty(eric,'eid',{
+		enumerable:false
+	});
+	//禁止删除
+	Object.defineProperty(eric,'eid',{
+		configurable:false
+	});*/
+	//同时设置只读/删除/遍历
+	Object.defineProperties(eric,{
+		eid:{
+			writable:false,
+			configurable:false
+		},
+		ename:{
+			configurable:false
+		},
+		salary:{
+			enumerable:false,
+			configurable:false
+		}
+	});
+	Object.defineProperty(eric,'eid',{
+		writable:true
+	});
+	eric.eid=1002;
+	//delete eric.ename;
+	for(var key in eric){
+		console.log(`${key}:${eric[key]}`);
+	}
+	console.log(eric);
+
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="ponywei">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <link rel="shortcut icon" href="img/ponywei.ico" >
+  <style>
+	body{ margin: 0;padding: 0;font-family: "微软雅黑";overflow: hidden;}
+	body,html{-webkit-text-size-adjust: none;width: 100%;height: 100%;}
+	*{text-decoration: none;list-style: none;}
+	img{border: 0px;}
+	ul,li,dl,dd,dt,p,ol{font-size: 12px;font-weight: 100;padding: 0;margin: 0;}
+	.wrap{margin: 0 auto;}
+	.fl{float: left;}
+	.fr{float: right;}
+	.index{overflow: hidden;}
+	.clr{clear:both; height:0px; width:100%; font-size:1px; line-height:0px; visibility:hidden; overflow:hidden;}
+	.pointer{cursor:pointer;}
+	a,input,button{ outline:none; }
+	::-moz-focus-inner{border:0px;}
+	/*a:link {color:#0f0;text-decoration:none;} 
+	a:visited {color: #FFFF00; text-decoration:none;} 
+	a:hover {color: #00FF00; text-decoration:underline;} 
+	a:active {color: #0000FF; text-decoration:underline;}*/
+	a{color: #000;}
+	.wrapper{clear: both;width: 100%;}
+	table { border-collapse:collapse; }
+	word-break:break-all /*文字换行*/
+	/*white-space:nowrap 文字不换行*/
+  
+  
+  </style>
+ </head>
+ <body>
+  <h2>商品添加</h2>
+
+
+<!--    lid          | int(11)       | NO   | PRI | NULL    | auto_increment |
+   | family_id    | int(11)       | YES  |     | NULL    |                |
+   | title        | varchar(128)  | YES  |     | NULL    |                |
+   | subtitle     | varchar(128)  | YES  |     | NULL    |                |
+   | price        | decimal(10,2) | YES  |     | NULL    |                |
+   | promise      | varchar(64)   | YES  |     | NULL    |                | 
+   |spec         | varchar(64)   | YES  |     | NULL    |-->
+  <form action='/product/add' method='post'>
+	标题:<input type='text' name='title'><br/>
+	副标题:<input type='text' name='subtitle'><br/>
+	分类:<input type='text' name='family_id'><br/>
+	价格:<input type='text' name='price'><br/>
+	承诺:<input type='text' name='promise'><br/>
+	规格:<input type='text' name='spec'><br/>
+	<input type='submit' value='提交'>
+  </form>
+   <script></script>
+ </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var father={
+	bal:1000000,
+	car:'infiniti'
+	};
+	function Student(sname,sage){
+		this.sname=sname;
+		this.sage=sage;
+	}/*原来prototype={}*/
+	//通过修改构造函数的prototype,修改所有孩子的父亲
+	Student.prototype =father;
+	var lilei=new Student('Li Lei',18);
+	var hmm=new Student('Han meimei',19);
+	console.log(lilei);
+	console.log(hmm);
+	console.log(lilei.bal,lilei.car);
+	console.log(hmm.bal,hmm.car);
+	</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>读取并修改元素的内容</title>
+<meta charset="utf-8" />
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+	div{float:left; height: 100px; line-height: 100px; }
+	#d1,#d3{ background-color: #ccff00; }
+	#d2{ cursor: pointer; background-color: #ffcc00; }
+	#d1{
+		width:64px;
+		overflow:hidden;
+		transition:all 1s linear;
+	}
+</style>
+</head>
+<body>
+	<div id="d1">树形列表</div>
+	<div id="d2">&lt;&lt;</div>
+	<div id="d3">内容的主体</div>
+  <script>
+		//1.查找触发事件的元素
+		//查找id为d2的元素
+		var d2=document.getElementById('d2');
+		//2.绑定事件处理函数
+		//为d2绑定单击事件处理函数
+		var mark=false;//假定为关闭状态
+		d2.onclick=function (){
+			var d2=this;
+			//3.查找需要修改的元素：找id为d1的元素
+			var d1=document.getElementById('d1');
+			//4.修改元素:让d1隐藏
+			//如果箭头向左，就隐藏
+			if(d2.innerHTML==='&lt;&lt;'){
+				//<d1 style='dispaly:none'></d1>
+				//transition不支持display:nonel
+				//d1.style.display='none';
+				d1.style.width='0px';
+				//修改d2的内容为>>
+				d2.innerHTML='&gt;&gt;';
+				//d2.textContent='>>';
+			}else{//否则就显示
+				//d1.style.display='block';
+				d1.style.width='64px';
+				//修改d2的内容为>>
+				d2.innerHTML='&lt;&lt;';
+			}
+			/*if(mark){
+				//true打开状态
+				d1.style.display='block';
+				//修改d2的内容为>>
+				d2.innerHTML='&lt;&lt;';
+				mark =false;
+			}else{
+				//false 关闭状态
+				d1.style.display='none';
+				//修改d2的内容为>>
+				d2.innerHTML='&gt;&gt;';
+				mark =true;
+			}*/
+			
+
+		}
+
+  </script>
+</body>
+</html>

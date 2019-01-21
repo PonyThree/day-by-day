@@ -1,0 +1,47 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+  用户名:<input type="text" name="uname" id="un"><br/>
+  密码:<input type="password" name="upwd" id="up"><br/>
+  <input type="button" value="按钮" onclick='getLogin()'>
+  <div id='d1'></div>
+   <script>
+	function getLogin(){
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function (){
+			if(xhr.readyState==4&&xhr.status==200){
+				var result=xhr.responseText;
+				d1.innerHTML=result;
+			}
+		}
+		xhr.open('post','/mypro/login',true);
+		var formdata="uname="+un.value+"&upwd="+up.value;
+		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		xhr.send(formdata);
+	}
+   
+   </script>
+ </body>
+</html>

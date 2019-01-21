@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body{height:2000px;}
+		#toTop{
+		position:fixed;
+		bottom:100px;
+		right:0;
+		display:none;
+		}
+	
+	
+	</style>
+</head>
+<body>
+	<div id="toTop">
+		<a href="#">返回顶部</a>
+	</div>
+	<script>
+	//获得滚动过的距离---网页顶部超出文档显示区顶部的距离
+	//兼容模式---相对于body或者相对于html
+	//网页特效---特定位置出现
+	window.onscroll=function(){
+		var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+		console.log(scrollTop);
+		if(scrollTop>=500){
+		toTop.style.display='block';
+		}else{
+			toTop.style.display='none';
+		}
+		
+	}
+	
+	
+	
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style></style>
+ </head>
+ <body>
+ <form action="post" enctype='multipart/form-data' >
+	  <table align='center'>
+		<tr>
+			<td>用户名:</td>
+			<td><input type="text" name='uname'></td>
+		</tr>
+		<tr>
+			<td>密码:</td>
+			<td><input type="text" name='upwd'></td>
+		</tr>
+		<tr>
+			<td>籍贯:</td>
+			<td>
+				<select name="address" size='1'>
+					<option value="bj">北京</option>
+					<option value="gz">广州</option>
+					<option value="sh">上海</option>
+					<option value="sc">四川</option>
+					<option value="sz">深圳</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>性别:</td>
+			<td>
+				<input type="radio" name="gender" id='g1'><label for="g1">男</label>
+				<input type="radio" name="gender" id='g2'><label for="g2">女</label>
+				<input type="radio" name="gender" checked id='g3'><label for="g3">不透露</label>
+			</td>
+		</tr>
+		<tr>
+			<td>头像:</td>
+			<td><input type="file" name="tx" multiple></td>
+		</tr>
+		<tr>
+			<td colspan='2'>愿意到以下城市工作</td>
+<!-- 			<td> -->
+<!-- 				 -->
+<!-- 			</td> -->
+		</tr>
+		<tr>
+			<td></td>
+			<td  align='center'>
+				<select name="city[]" multiple>
+					<option value="bj">北京</option>
+					<option value="gz">广州</option>
+					<option value="sh">上海</option>
+					<option value="sc">四川</option>
+					<option value="sz" selected>深圳</option>
+				</select>
+			</td>
+
+		</tr>
+		<tr>
+			<td valign='top'>留言</td>
+			<td>
+				<textarea name="msg"  cols="30" rows="10"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="提交"></td>
+			<td><input type="reset" value="清除"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="checkbox" name='isOpen' value='false'>请不要公开我的信息</td>
+		</tr>
+		
+	  </table>	
+  </form>
+   <script></script>
+ </body>
+</html>

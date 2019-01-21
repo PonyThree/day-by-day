@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>jQueryAPI特点</h1>
+  <button id="btn1">click me(0)</button>
+  <button id="btn2">click me(0)</button>
+  <button id="btn3">click me(0)</button>
+  <script src="js/jquery-1.11.3.js"></script>
+  <script>
+
+    //为三个按钮绑定单击事件，记录单击次数
+    //查找三个按钮
+    var $btns=$('button');
+    console.log($btns);
+    //jquery自带遍历效果
+    $btns.click(function(){
+      //this->$bnts[i]->当前单击的元素
+      var $btn=$(this);
+      var n=parseInt($btn.html().slice(9,-1));
+      n++;
+      $btn.html(`click me(${n})`);
+    });
+  </script>
+</body>
+</html>

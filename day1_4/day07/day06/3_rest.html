@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function calc(ename,...bonus){
+		//得到的bonus是一个纯正的数组
+		//prev---募捐箱-->可以依次把数据放进去
+		document.write(`${ename}的总工资是${bonus.reduce((prev,ele)=>prev+ele)}<br>`);
+	}
+	calc('Li Lei',10000,2000);
+	calc('Han Meimei',4000,5000,1000,3000);
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>

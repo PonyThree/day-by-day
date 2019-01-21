@@ -1,0 +1,826 @@
+
+<!-- 声明文档的类型为html -->
+<!doctype html>
+<html lang="en">
+ <head>
+	<!-- 网页的标题 -->
+	<title>我的网页---ponywei</title> 
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 元数据，定义网页的全局信息 -->
+	<!-- 编码方式为utf-8方式，防止乱码--> 
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="关键字的内容">  
+	<meta name="description" content="描述的内容">
+	<!--	编辑软件 -->
+	<meta name="Generator" content="EditPlus®">  
+	<!--	作者 -->
+	<meta name="Author" content="ponywei">
+	<!--定义或者引用js文件-->
+	<script></script>  
+	<!--引用外部样式文件-->  
+	<link rel="shortcut icon" href="img/ponywei.ico" />
+	<!-- 定义网页的内部样式--> 
+	<style>
+	*{
+	margin:0;
+	padding:0;
+	}
+	a{
+	text-decoration:none;
+	}
+	ul li{
+	list-style-type:none;
+	}
+	.fl{
+	float: left;
+	}
+	.fr{
+	float: right;
+	}
+	.line::after{
+	position:absolute;
+	display: block;
+	content:'';
+	width:1px;
+	height:30%;
+	left:1px;
+	top:0px;
+	bottom:0;
+	vertical-align:middle;
+	margin:auto 0;
+	background-color: #000;
+	}
+	body{
+	background-color: #f5f5f5;
+	}
+/*	清除浮动*/
+	.clearfix::after{
+	display:block;
+	content:'';
+	clear:both;
+	}
+	body{
+	background-color: #f5f5f5;
+	font: 12px "simhei", Arial, Helvetica, sans-serif;
+    color: #666;
+	}
+	ul li{
+	list-style-type:none;
+	}
+	/*	头部样式*/
+	/*	头部左边样式*/
+	#top{
+	width: 1000px;
+	height: 51px;
+	margin:50px auto 0;
+	}
+	#top > .l_top > img{
+	vertical-align:middle;
+	margin:5px 0;
+	}
+	/*	头部中间样式*/
+	#top > .c_top{
+	position:relative;
+    box-sizing: border-box;
+	width: 409px;
+    height: 36px;
+	margin:8px 0 0 40px;
+    padding: 10px;
+    border: 1px solid #0AA1ED;
+    background-color: #f5f5f5;
+	}
+	#top > .c_top > input{
+	display: inline-block;
+	outline:none;
+	border:0;
+	background-color:#f5f5f5;
+	margin-top:-2px;
+	color: #c3c3c3;
+    font: 14px simhei;
+	}
+	#top > .c_top >.clas_search{
+	position:absolute;
+	width: 97px;
+    height:auto;
+    top: 10px;
+    right:0px;
+	}
+	#top > .c_top >.clas_search >span{
+	text-align: center;
+    color: #c3c3c3;
+    font: 14px simhei;
+	}
+	#top  >.search_logo{
+	width: 36px;
+    height: 36px;
+	margin-top:8px;
+	background-color: #0AA1ED;
+	}
+	/*	头部右边样式*/
+	#top >.r_top{
+	display: flex;
+	height: 38px;
+	margin:8px auto;
+	justify-content:space-around;
+	}
+	#top >.r_top>li{
+	position:relative;
+	width: 26px;
+	height: 37px;
+	padding:2px 10px;
+	}
+	#top >.r_top>li:last-child,#top >.r_top>li:nth-child(4){
+	width: 46px;
+	vertical-align:middle;
+	padding: 2px 0 2px 6px;
+	}
+	#top >.r_top>li>a{
+	display:inline-block;
+	height: 23px;
+	margin:6px;
+	line-height: 23px;
+	text-align:right;
+	color:#808080;
+	}
+	/*	 	主导航样式 */
+	ul.nav{
+	width: 1000px;
+	height: 18px;
+	margin:38px auto 20px;
+    font-size: 16px;
+	}
+	ul.nav > li{
+	float:left;
+	margin-right:40px;
+	}
+	ul.nav > li >a{
+	display: inline-block;
+	color:#ccc;
+	}
+/*	轮播图*/
+	#banner{
+	position:relative;
+	width: 1000px;
+	height: 400px;
+	margin:0 auto;
+	overflow:hidden;
+	}
+	.list{
+	clear:both;
+	width:4000px;
+	height:400px;
+	}
+	#banner .list li{
+	float: left;
+	width: 1000px;
+	height: 400px;
+	}
+	.bofore,.next{
+	position:absolute;
+	width: 35px;
+	height: 70px;
+	top:0;
+	bottom:0;
+	margin:auto 0;
+	border-radius:6px;
+	}
+	.bofore{
+	left:10px;
+	background:rgba(0,0,0,.1) url(img/arrow-left.png) center center no-repeat;
+	}
+	.next{
+	right:10px;
+	background:rgba(0,0,0,.1) url(img/arrow-right.png) center center no-repeat;
+	}
+	.bofore:hover,.next:hover{
+	background-color: rgba(0,0,0,.2);
+	}
+	.circle{
+	position: absolute;
+	width: 88px;
+	height: 20px;
+	bottom:10px;
+	left:50%;
+	margin-left:-44px;
+	}
+	.circle li{
+	float:left;
+	width: 12px;
+	height: 12px;
+	margin:5px;
+	border-radius:50%;
+	background-color: #fff;
+	}
+	li.active{
+	background: #0AA1ED;
+	}
+/*	商品区域的标题信息*/
+	.title{
+	font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+	}
+	.title >img{
+	margin-bottom: -5px;
+    margin-right: 10px;
+	}
+	.floor{
+	width: 1000px;
+	height:auto;
+	margin:24px auto 10px;
+	}
+	.floor .top{
+	display:flex;
+	width: 1000px;
+	margin-bottom:10px;
+	justify-content:space-between;
+	}
+	.floor >.top> div:first-child{
+	position: relative;
+	width: 609px;
+	height: 377px;
+	background-color: #e8e8e8;
+	}
+	.floor >.top > div:first-child .desc{
+    position: absolute;
+	width: 245px;
+    height: 243px;
+    top: 55px;
+    left: 65px;
+	font-size: 24px;
+    color: #666;
+	z-index:2;
+	}
+	.floor >.top > div>.desc>p.name{
+	font-size: 32px;
+    color: #333;
+	}
+	.floor >.top > div>.desc>p.details{
+	font-size: 12px;
+    margin-bottom: 24px;
+	}
+	.price{
+	font-size: 24px;
+    color: #0AA1ED;
+    margin-bottom: 12px;
+	}
+	.floor a.search{
+	display: inline-block;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    background:linear-gradient(to bottom, #27b1f6 0%, #0aa1ed 100%);
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+	}
+	.floor >.top > div:first-child>.desc+img{
+	position: absolute;
+	top: 56px;
+    right: 30px;
+    width: 390px;
+    height: 300px;
+    cursor: pointer;
+    transition: 1s;
+	z-index:1;
+	}
+	.floor >.top >div>.desc+img:hover{
+	transform: scale(1.1, 1.1);
+	}
+	.floor >.top >div:nth-child(2){
+	position: relative;
+	width: 381px;
+    height: 377px;
+	background-color: #e8e8e8;
+	}
+	.floor >.top >div:nth-child(2)>.desc{
+    position: absolute;
+	width: 253px;
+    height: 221px;
+    top: 63px;
+    left: 24px;
+	z-index:2;
+	}
+	.floor >.top >div:nth-child(2)>.desc+img{
+	position: absolute;
+    width: 292px;
+    height: 232px;
+    bottom: 20px;
+    right: 25px;
+    cursor: pointer;
+    transition: 1s;
+	z-index:1;
+	}
+/*	底部四块样式*/
+	.floor >.bottom{
+	display: flex;
+	width: 1000px;
+	height:auto;
+	justify-content: space-between;
+	}
+	.floor >.bottom >div:nth-child(1){
+	position: relative;
+    width: 377px;
+    height: 233px;
+	background-color: #e8e8e8;
+	}
+	.floor >.bottom >div:nth-child(1)>.desc{
+	padding-top: 1em;
+    width: 149px;
+    height: 119px;
+    position: absolute;
+    top: 21px;
+    left: 33px;
+	z-index:2;
+	}
+	.floor >.bottom >div:nth-child(1)>.desc>p.name{
+	font-size: 22px;
+    color: #333;
+	}
+	.floor >.bottom >div:nth-child(1)>.desc+img{
+	position: absolute;
+    top: 40px;
+    right: 17px;
+    cursor: pointer;
+    transition: 1s;
+	z-index:1;
+	}
+	.floor >.bottom>div>.desc+img:hover{
+	transform: scale(1.1, 1.1);
+	}
+	.floor >.bottom>ul.product>li{
+	text-align:center;
+    position: relative;
+    background: #e8e8e8;
+    overflow: hidden;
+	}
+	.foor >.bottom>ul.product>li>p.name{
+	color: #333;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+	}
+	.floor >.bottom>ul.product>li>img{
+	transition:1s;
+	}
+	.floor >.bottom>ul.product>li>img:hover{
+	transform: scale(1.1, 1.1);
+	}
+/*	品质保障样式*/
+	.service{
+	display: flex;
+	width: 1004px;
+    height: 82px;
+    margin: 43px auto 74px;
+	justify-content:space-around;
+	}
+	.service li {
+		position: relative;
+		text-align:center;
+		width: 65px;
+		align-self:center;
+		transition:1s;
+	}
+	.service li:hover{
+	left:10px;
+	}
+	.service li img{
+	width: 60px;
+	height: 60px;
+	}
+	.service li p{
+	width: 65px;
+	height: 16px;
+	font-size:12px;
+	}
+/*	商城底部样式*/
+	#foot{
+	width: 100%;
+	background-color: #fff;
+	}
+	.foot{
+	width: 1000px;
+	height: 238px;
+	padding-top:62px;
+	margin:0 auto;
+	
+	}
+	.intro{
+	width:363px;
+	height: 118px;
+	margin:10px 0;
+	}
+	.intro .f_logo{
+	padding-left:20px;
+	margin-right:92px;
+	}
+	.help{
+	width: 339px;
+	height: 224px;
+	margin:10px 0;
+	}
+	.help ul>li>a>h3 {
+	width:56px;
+	height: 16px;
+	color: #333;
+    font: 14px simhei;
+    font-weight: inherit;
+	}
+	.help ul{
+	margin-right: 57px;
+    margin-bottom: 20px;
+    line-height: 26px;
+	}
+	.help ul>li{
+	width: 56px;
+	height: 26px;
+	}
+	.help ul>li>a{
+	color: #808080;
+    font: 12px simhei;
+    font-weight: inherit;
+	}
+	.help ul>li img{
+	margin:0  4px;
+	}
+	.client{
+    width: 125px;
+    text-align: center;
+	font: 12px "simhei", Arial, Helvetica, sans-serif;
+	margin:10px 6px 20px 46px;
+	}
+	.client p{
+	font-size:14px;
+	margin-bottom:11px;
+	}
+	.code{
+	margin-top:10px;
+	}
+	.foot > p{
+	width:1000px;
+	height: 48px;
+	color: black;
+	font-family: "microsoft yahei";
+	text-align:center;
+	line-height: 22px;
+	margin-top:-107px;
+	padding-bottom: 26px;
+	}
+	</style>
+ </head>
+ <body>
+	<!-- 	头部 -->
+	<div id="top" class='clearfix'>
+		<!-- 		头部logo	 -->
+		<div class="l_top fl"><img src="img/logo.png" alt=""></div>
+		<!-- 		头部输入框 -->
+		<div class="c_top fl ">
+			<input type="text" placeholder='请输入您要搜索的内容' >
+			<div class="clas_search">
+				<span>分类搜索</span>
+				<img src="img/header_normal.png" alt="">
+			</div>	
+		</div>
+		<a href="" class="search_logo fl"><img src="img/search.png" alt=""></a>
+		<ul class="r_top fr">
+				<li><a href=""><img src="img/care.png" alt=""></a></li>
+				<li class='line'><a href=""><img src="img/order.png" alt=""></a></li>
+				<li class='line'><a href=""><img src="img/shop_car.png" alt=""></a></li>
+				<li class='line'><a href="">注册</a></li>
+				<li class='line'><a href="">登录</a></li>
+			</ul>	
+
+	</div>
+	<!-- 	主导航 -->
+	<ul class="nav">
+		<li><a href="">首页</a></li>
+		<li><a href="">学习用品</a></li>
+		<li><a href="">私人订制</a></li>
+	</ul>
+	<!-- 	轮播图 -->
+	<div id="banner"> 
+		<!--    轮播图片区域 -->
+		<ul class='list'>
+			<li><img src="img/banner1.png" alt=""></li> 
+			<li><img src="img/banner2.png" alt=""></li> 
+			<li><img src="img/banner3.png" alt=""></li> 
+			<li><img src="img/banner4.png" alt=""></li> 
+		</ul>
+		<!-- 	左右按钮区域 -->
+		<a href="" class='bofore'></a>
+		<a href="" class='next'></a> 
+		<!-- 	底部圆点按钮区域 -->
+		<ul class='circle'>
+			<li class='active'></li> 
+			<li></li> 
+			<li></li> 
+			<li></li>
+		</ul>
+	</div> 
+	<!-- 	首页推荐1F -->
+	<div class="floor">
+		<!-- 头部标题 -->
+		<h3 class="title">
+			<img src="img/computer_icon.png" alt="">
+			首页推荐 /1F
+		</h3>
+		<!-- 	第一块区域 -->
+		<div class="top">	
+			<div>
+				<div class="desc">
+					<p class="name">Apple MacBook Air系列</p>
+					<p class="details">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+					<p class="price">¥6988.00</p>
+					<a href="" class='search'>查看详情</a>
+				</div>
+				<img src="img/study_computer_img1.png" alt="">
+			</div>
+			<div>
+				<div class="desc">
+					<p class="name">小米Air 金属超轻薄</p>
+					<p class="details">酷睿双核i5处理器|2GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+					<p class="price">¥6988.00</p>
+					<a href="" class='search'>查看详情</a>
+				</div>
+				<img src="img/study_computer_img2.png" alt="">
+			</div>
+		</div>	
+		<!-- 	底部四块 -->
+		<div class='bottom'>
+			<div class="product">
+				<div class="desc">
+					<p class="name">联想E480C 轻薄系列</p>
+					<p class="price">¥5399.00</p>
+					<a href="" class='search'>查看详情</a>
+				</div>
+				<img src="img/study_computer_img3.png" alt="">
+			</div>
+			<ul class="product">
+				<li>
+					<img src="img/study_computer_img4.png" alt="">
+				</li>
+				<li>
+					<p class="name">华硕RX310</p>
+				</li>
+				<li>
+					<p class="price">¥4966.00</p>
+				</li>
+				<li>
+					<a href="" class="search">查看详情</a>
+				</li>
+			</ul>
+			<ul class="product">
+				<li>
+					<img src="img/study_computer_img5.png" alt="">
+				</li>
+				<li>
+					<p class="name">华硕RX310</p>
+				</li>
+				<li>
+					<p class="price">¥4966.00</p>
+				</li>
+				<li>
+					<a href="" class="search">查看详情</a>
+				</li>
+			</ul>
+			<ul class="product">
+				<li>
+					<img src="img/study_computer_img3.png" alt="">
+				</li>
+				<li>
+					<p class="name">华硕RX310</p>
+				</li>
+				<li>
+					<p class="price">¥4966.00</p>
+				</li>
+				<li>
+					<a href="" class="search">查看详情</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 	首页推荐2F -->
+    <div class="floor">
+		<h3 class="title">
+			<img src="img/computer_icon.png" alt="">
+			首页推荐 /2F
+		</h3>
+		<!-- 	第一块区域 -->
+		<div class="top">	
+			<div>
+				<div class="desc">
+					<p class="name">Apple MacBook Air系列</p>
+					<p class="details">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+					<p class="price">¥6988.00</p>
+					<a href="" class='search'>查看详情</a>
+				</div>
+				<img src="img/study_computer_img1.png" alt="">
+			</div>
+			<div>
+				<div class="desc">
+					<p class="name">小米Air 金属超轻薄</p>
+					<p class="details">酷睿双核i5处理器|2GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+					<p class="price">¥6988.00</p>
+					<a href="" class='search'>查看详情</a>
+				</div>
+				<img src="img/study_computer_img2.png" alt="">
+			</div>
+		</div>	
+		<!-- 	底部四块 -->
+		<div class='bottom'>
+			<div class="product">
+				<div class="desc">
+					<p class="name">联想E480C 轻薄系列</p>
+					<p class="price">¥5399.00</p>
+					<a href="" class='search'>查看详情</a>
+				</div>
+				<img src="img/study_computer_img3.png" alt="">
+			</div>
+			<ul class="product">
+				<li>
+					<img src="img/study_computer_img4.png" alt="">
+				</li>
+				<li>
+					<p class="name">华硕RX310</p>
+				</li>
+				<li>
+					<p class="price">¥4966.00</p>
+				</li>
+				<li>
+					<a href="" class="search">查看详情</a>
+				</li>
+			</ul>
+			<ul class="product">
+				<li>
+					<img src="img/study_computer_img5.png" alt="">
+				</li>
+				<li>
+					<p class="name">华硕RX310</p>
+				</li>
+				<li>
+					<p class="price">¥4966.00</p>
+				</li>
+				<li>
+					<a href="" class="search">查看详情</a>
+				</li>
+			</ul>
+			<ul class="product">
+				<li>
+					<img src="img/study_computer_img3.png" alt="">
+				</li>
+				<li>
+					<p class="name">华硕RX310</p>
+				</li>
+				<li>
+					<p class="price">¥4966.00</p>
+				</li>
+				<li>
+					<a href="" class="search">查看详情</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 	首页推荐3F -->
+	<div class="floor">
+			<h3 class="title">
+				<img src="img/computer_icon.png" alt="">
+				首页推荐 /3F
+			</h3>
+		<!-- 	第一块区域 -->
+			<div class="top">	
+				<div>
+					<div class="desc">
+						<p class="name">Apple MacBook Air系列</p>
+						<p class="details">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+						<p class="price">¥6988.00</p>
+						<a href="" class='search'>查看详情</a>
+					</div>
+					<img src="img/study_computer_img1.png" alt="">
+				</div>
+				<div>
+					<div class="desc">
+						<p class="name">小米Air 金属超轻薄</p>
+						<p class="details">酷睿双核i5处理器|2GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存</p>
+						<p class="price">¥6988.00</p>
+						<a href="" class='search'>查看详情</a>
+					</div>
+					<img src="img/study_computer_img2.png" alt="">
+				</div>
+			</div>	
+		<!-- 	底部四块 -->
+			<div class='bottom'>
+				<div class="product">
+					<div class="desc">
+						<p class="name">联想E480C 轻薄系列</p>
+						<p class="price">¥5399.00</p>
+						<a href="" class='search'>查看详情</a>
+					</div>
+					<img src="img/study_computer_img3.png" alt="">
+				</div>
+				<ul class="product">
+					<li>
+						<img src="img/study_computer_img4.png" alt="">
+					</li>
+					<li>
+						<p class="name">华硕RX310</p>
+					</li>
+					<li>
+						<p class="price">¥4966.00</p>
+					</li>
+					<li>
+						<a href="" class="search">查看详情</a>
+					</li>
+				</ul>
+				<ul class="product">
+					<li>
+						<img src="img/study_computer_img5.png" alt="">
+					</li>
+					<li>
+						<p class="name">华硕RX310</p>
+					</li>
+					<li>
+						<p class="price">¥4966.00</p>
+					</li>
+					<li>
+						<a href="" class="search">查看详情</a>
+					</li>
+				</ul>
+				<ul class="product">
+					<li>
+						<img src="img/study_computer_img3.png" alt="">
+					</li>
+					<li>
+						<p class="name">华硕RX310</p>
+					</li>
+					<li>
+						<p class="price">¥4966.00</p>
+					</li>
+					<li>
+						<a href="" class="search">查看详情</a>
+					</li>
+				</ul>
+			</div>
+	</div>
+	<!-- 	底部品质保障 -->
+    <ul class="service">
+		<li>
+			<img src="img/icon1.png" alt="">
+			<p>品质保障</p>
+		</li>
+		<li>
+			<img src="img/icon2.png" alt="">
+			<p>私人订制</p>
+		</li>
+		<li>
+			<img src="img/icon3.png" alt="">
+			<p>学院特供</p>
+		</li>
+		<li>
+			<img src="img/icon4.png" alt="">
+			<p>专属特权</p>
+		</li>
+	</ul>	
+	<!-- 	学子商城底部部分 -->
+	<div id="foot">
+			<div  class='foot clearfix'>
+				<div class="intro fl">
+					<img src="img/logo.png" alt="" class="f_logo">
+					<img src="img/footerFont.png" alt="" class="text">
+				</div>
+				<div class="help fl clearfix">
+					<ul class='fl'>
+						<li><a href=""><h3>买家帮助</h3></a></li>
+						<li><a href="">新手指南</a></li>
+						<li><a href="">服务保障</a></li>
+						<li><a href="">常见问题</a></li>
+					</ul>
+					<ul class='fl'>
+						<li><a href=""><h3>商家帮助</h3></a></li>
+						<li><a href="">商家入驻</a></li>
+						<li><a href="">商家后台</a></li>
+					</ul>
+					<ul class='fl'>
+						<li><a href=""><h3>关于我们</h3></a></li>
+						<li><a href="">关于达内</a></li>
+						<li><a href="">联系我们</a></li>
+						<li><img src="img/wechat.png" alt=""><img src="img/sinablog.png" alt=""></li>
+					</ul>
+				</div>
+				<div class="client fl">
+						<p>关于我们</p>
+						<img src="img/ios.png" alt="">
+						<img src="img/android.png" alt="">
+				</div>
+				<div class="code fl">
+					<img src="img/erweima.png" alt="">
+				</div>
+				<p class='fl'>&copy;2017达内科技有限公司&nbsp;版权所有&nbsp;京ICP备08000853号-75</p>
+			</div>
+	</div>
+   <script></script>
+ </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- 1.引入vue.js -->
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<!-- 2.定义页面view -->
+	<div id="app">
+		<h1><span>¥{{price.toFixed(2)}}</span><span>*</span><span>{{count}}</span><span>=</span><span>¥{{(price*count).toFixed(2)}}</span></h1>
+		<h2>
+			<h1><span>¥{{products[0].price.toFixed(2)}}</span><span>*</span><span>{{products[0].count}}</span><span>=</span><span>¥{{(products[0].price*products[0].count).toFixed(2)}}</span></h1>
+		</h2>
+		<h2>
+			<h1><span>¥{{products[1].price.toFixed(2)}}</span><span>*</span><span>{{products[1].count}}</span><span>=</span><span>¥{{(products[1].price*products[1].count).toFixed(2)}}</span></h1>
+		</h2>
+		<h1>{{sex==1?'男':'女'}}</h1>
+	</div>
+	<script>
+	//3.定义数据模型model和控制器对象viewmodel
+	var vm=new Vue({
+		el:'#app',
+		data:{//数据模型
+			price:12.5,
+			count:6,
+			products:[
+				{price:17.5,count:14},
+				{price:25,count:12}
+			],
+			sex:1
+		}
+	})
+	
+	
+	</script>
+</body>
+</html>
