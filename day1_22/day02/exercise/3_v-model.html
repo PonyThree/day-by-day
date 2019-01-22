@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<!-- 1.使用v-model实现双向数据绑定:M-V V-M -->
+	<!-- 2.当按下回车键时，自动搜索内容 回车键键号为13 -->
+	<!-- 3.watch监视(通过一个死循环一直扫描虚拟DOM树，自动更新内容)，模拟百度搜索，边输入控制台边显示，自动执行搜索
+		步骤：
+		watch:{
+			监视模型数据变量名(){//这里变量名一定要与data中模型变量名和界面匹配
+				执行语句;
+			}
+		}
+	-->
+	<div id="app">
+		<!-- 文本框和文本域修改的是value属性 -->
+		<input type='text' v-model:value='kwords' @keyup.13='search()'><button @click='search()'>搜索</button>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				kwords:''
+			},
+			methods:{
+				search(){
+					console.log(`查找'${vm.kwords}'相关的商品!!!`);
+				}
+			},
+			watch:{//监视
+				kwords(){
+					this.search();
+				}
+			}
+		})
+	
+	</script>
+</body>
+</html>

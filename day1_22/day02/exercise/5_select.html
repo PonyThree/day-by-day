@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>表单中的双向数据绑定</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 首次加载时，将status的值与绑定option的value进行匹配，匹配上的就选中,若界面的选中状态发生变化，就把选中项option的value值匹配给stauts，然后更新到model中去 -->
+		<select v-model='status'>
+			<option value="10">未付款</option>
+			<option value="20">已付款</option>
+			<option value="30">已发货</option>
+			<option value="40">已签收</option>
+		</select>
+		<h1>当前订单状态:{{status==10?'未付款':status==20?'已付款':status==30?'已发货':'已签收'}}</h1>
+	</div>
+	<script>
+	var vm=new Vue({
+		el:'#app',
+		data:{
+			status:10
+		},
+		watch:{
+			status(){
+				console.log(this.status);
+			}
+		}
+	})
+	
+	</script>
+</body>
+</html>

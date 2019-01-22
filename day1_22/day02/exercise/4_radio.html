@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>单选按钮双向数据绑定</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		性别:<br/>
+		<!-- 首次加载时，自动拿model中的sex的值与value进行匹配，匹配上的就选中
+			接着，如果界面谁选中，value值就是谁，同时去匹配sex的值，更新model中的值
+		-->
+		<label><input type="radio" name='sex' v-model='sex' value='1'>男</label>
+		<label><input type="radio" name='sex' v-model='sex' value='0'>女</label><br>
+		<!-- 首次加载时，将model中的agree值匹配input的checked属性,如果为false,则未选中， -->
+		<!-- 当界面操作选中input时，checked变为true，此时agree变为true,同时更新到model中去 -->
+		<label><input type="checkbox" v-model='agree'>同意</label>
+		<button :disabled='!agree'>注册</button>
+
+	</div>
+	<script>
+	var vm=new Vue({
+		el:'#app',
+		data:{
+			sex:1,
+			agree:false
+		},
+		watch:{
+			sex(){
+				console.log('sex is '+this.sex);
+			}
+		}
+	})
+	
+	</script>
+</body>
+</html>

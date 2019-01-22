@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for='(p,i) of products'>{{i+1}}|¥{{p.price.toFixed(2)}}|{{(p.price.toFixed(2)*p.count).toFixed(2)}}</li>
+		</ul>
+		<!-- computed方法这里只需要写入属性名就可以，可以从缓存中获取计算后的值 -->
+		<h2>总价:¥{{total}}</h2>
+		<!-- methods方法这里需要写入函数调用，得到返回值，需要多次计算 -->
+		<!-- <h2>总价:¥{{getTotal()}}</h2> -->
+	</div>
+	<script>
+	var vm=new Vue({
+		el:'#app',
+		data:{
+			products:[
+				{price:10,count:3},
+				{price:15,count:1},
+				{price:20,count:2}
+			]
+		},
+		computed:{
+			total(){
+				console.log('计算了一次');
+				var sum=0;
+				for(var p of this.products){
+					sum+=p.price*p.count;
+				}
+				return sum.toFixed(2);
+			}
+		}
+		// methods:{
+		// 	getTotal(){
+		// 		console.log('计算了一次');
+		// 		var sum=0;
+		// 		for(var p of this.products){
+		// 			sum+=p.price*p.count;
+		// 		}
+		// 		return sum.toFixed(2);
+		// 	}
+		// }
+	})
+	
+	</script>
+</body>
+</html>

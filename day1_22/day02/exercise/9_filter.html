@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<h1>性别:{{sex|sexFilter('chs')|sexIcon}}</h1>
+		<h1>性别:{{sex|sexFilter('eng')|sexIcon}}</h1>
+	</div>
+	<script>
+		//创建一个过滤器:sexFilter
+		//将1->男,0->女
+		//如果是中文网站:1->男 0->女
+		//如果是英文网站:1->Male ,0->Female
+		Vue.filter('sexFilter',function(val,lang){
+			//val会接住需要加工的原始值:1或0
+			if(lang=='chs')
+			return  val==1?'男':'女';
+			else
+			return val==1?'Male':'Female';
+		});
+		Vue.filter('sexIcon',function(val){
+			//val可能接住前面一个过滤器加工后的半成品
+			//男/女   Male/Female
+			if(val=='男'||val=='Male')
+			return val+'♂';
+			else
+			return val+'♀';
+		})
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				sex:1
+			}
+		})
+		// setInterval(function(){
+		// 	vm.sex=!vm.sex;
+		// },1000);
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>首次加载解析</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<!-- v-once只在首次页面加载时元素起作用 -->
+	<div id="app">
+		<h1 v-once>页面首次加载时间{{time}}</h1>
+		<h1>页面再次加载时间{{time}}</h1>
+	</div>
+	<script>
+	var vm=new Vue({
+		el:'#app',
+		data:{
+			time:new Date().toLocaleString()
+		}
+	})
+	setInterval(function(){
+		vm.time=new Date().toLocaleString();
+	},1000);
+	
+	</script>
+</body>
+</html>

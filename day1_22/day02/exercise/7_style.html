@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.fade{
+			display: none;
+		}
+		span.vali_success,span.vali_fail{
+			display:inline-block;
+			font-size: 12px;
+			padding:5px 10px;
+		}
+		span.vali_success{
+			background:green;
+			color:lightgreen;
+		}
+		span.vali_fail{
+			background:pink;
+			color:red;
+		}
+	</style>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model='phone' @focus='getFocus()' @blur='myBlur()'>
+		<span  :class='spanClass' class='fade'>{{text}}</span>
+		<!-- <span class='vali_success'>手机号格式正确</span>
+		<span class='vali_fail'>手机号格式不正确</span> -->
+	</div>
+	<script>
+	var vm=new Vue({
+		el:'#app',
+		data:{
+			phone:'',
+			//通过类名修改样式
+			// spanClass:'',//方法一
+			spanClass:{
+				vali_success:false,
+				vali_fail:false
+			},
+			text:'',
+		},
+		methods:{
+				getFocus(){//当获得焦点时自动触发
+				//清空内容和样式
+					this.text='';
+					this.spanClass.vali_fail='';
+					this.spanClass.vali_success='';
+				},
+				myBlur(){//当失去焦点时，进行验证
+					//如果验证通过
+					// 这里的phone是双向数据绑定得到的界面的value值
+					if(/^1[3-8]\d{9}$/.test(this.phone)){
+						//修改样式为正确的样式
+						this.text='手机格式正确';
+						this.spanClass.vali_success=true;
+						// this.spanClass.vali_success=false;
+					}else{
+						//修改为不正确的样式和内容
+						this.text='手机格式不正确';
+						// this.spanClass.vali_success=false;
+						this.spanClass.vali_fail=true;
+					}
+
+				}
+			}
+	})
+	</script>
+</body>
+</html>
