@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>路由</title>
+	<script src='js/vue.js'></script>
+	<script src='js/vue-router.js'></script>
+</head>
+<body>
+	<!-- 创建组件 -->
+	<!-- 3.定义各个'页面'的子组件 -->
+	<!-- 每个子组件都包含两部分:template和script -->
+	<template id="tplIndex">
+		<div>
+			<h1>这里是首页</h1>
+		</div>
+	</template>
+	<script>
+			var Index={
+				template:'#tplIndex'
+			}
+	</script>
+	<template id="tplLogin">
+			<div>
+				用户名:<input type="text"><br>
+				密码:<input type="password"><br>
+				<button>登录</button>
+			</div>
+	</template>
+	<script>
+			var Login={
+				template:'#tplLogin'
+			}
+	</script>
+	<template id='tplNotFound'>
+		<div>
+			<h1 style='color:red'>404:Not Found</h1>
+		</div>
+	</template>
+	<script>
+		var NotFound={
+			template:'#tplNotFound'
+		}
+	</script>
+	<script>
+	//4.定义路由
+		//4.1.定义路由字典
+		var routes=[
+			{path:'/',component:Index},//默认加载组件
+			{path:'/index',component:Index},
+			{path:'/login',component:Login},
+			// {path:'/*',component:{template:`<h1>404:xxx</h1>`}}//错误路径
+			{path:'/*',component:NotFound}
+		];
+		//4.2.创建路由器对象,加载路由字典 
+		//# 监控的是锚点地址
+		//没有# 是请求的服务器
+		var router=new VueRouter({routes});
+		</script>
+	<!-- 界面 -->
+	<!-- 1.创建唯一完整的html页面,其中定义受Vue监控的div#app和new Vue()-->
+	<div id="app">
+		<!-- 2.在html页面内，用router-view临时占位 -->
+		<router-view></router-view>
+	</div>
+	
+	<script>
+	
+	new Vue({
+		el:'#app',
+		//4.3.将路由器加载到界面
+		router,
+		data:{
+
+		}
+	})
+	
+	</script>
+</body>
+</html>
