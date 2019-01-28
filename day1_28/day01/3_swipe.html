@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src='js/vue.js'></script>
+	<script src='js/index.js'></script>
+	<style>
+	#app{/*父元素样式*/
+		height: 143px;
+		border:1px solid #f00;
+	}
+	#app img{
+		width: 100%;/*图片的宽度占满父元素宽度*/
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="app">
+		<mt-swipe :auto='2500'>
+			<mt-swipe-item v-for='item in list'>
+				<img :src="item" alt="" >
+			</mt-swipe-item>
+		</mt-swipe>
+	</div>
+	<script>
+		new Vue({
+			el:'#app',
+			data:function(){
+				return {
+					list:[
+						'img/banner1.png',
+						'img/banner2.png',
+						'img/banner3.png',
+						'img/banner4.png'
+					]
+				}
+			}
+		})
+	
+	
+	</script>
+</body>
+</html>

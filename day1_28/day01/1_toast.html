@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- 引入min-ui的css文件 -->
+	<link rel="stylesheet" href="css/style.css">
+	<script src='js/vue.js'></script>
+	<script src='js/index.js'></script>
+	<style>
+		.mytoast{
+			color:#e4393c;
+			background-color:pink;
+			border:2px solid #aaa;
+		}
+	
+	</style>
+</head>
+<body>
+	<div id="app">
+
+	</div>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{},
+			methods:{
+
+			},
+			created:function(){
+				//显示消息提示框
+				// this.$toast('消息提示框');
+				//为提示框添加属性
+				var mytoast=this.$toast({
+					message:'数据正在加载中',
+					position:'top',
+					duration:-1,
+					className:'mytoast'
+				});
+				//创建定时器,2s删除toast对象
+				setTimeout(function(){
+					mytoast.close();
+				},4000)
+			}
+		})
+	</script>
+</body>
+</html>
