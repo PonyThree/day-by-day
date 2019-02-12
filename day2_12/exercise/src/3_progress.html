@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>进度条</title>
+</head>
+<body>
+	<h3>进度条</h3>
+	<h4>左右晃动的进度条</h4>
+	<progress></progress>
+	<h4>具有指定进度值得进度条</h4>
+	<progress value='0.8'></progress><br>
+	<progress id='myprogress' value='0'></progress>
+	<script>
+		//练习:使用定时器+进度条实现一个可以动态
+		//前进的进度条到100%停止
+		//定时器1s修改value+0.1 到1结束
+		var timer=setInterval(function(){
+			//得到原来的初始值
+			let fvalue=myprogress.value;
+			// console.log(fvalue);
+			//每次修改原来的初始值
+			fvalue+=0.1;
+			//将修改后的值添加到原来dom中的value里面去
+			myprogress.value=fvalue;
+			console.log(myprogress.value);
+			if(fvalue==1){
+				clearInterval(timer);
+			}
+		},800);
+	</script>
+</body>
+</html>

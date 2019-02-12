@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>视频video</title>
+</head>
+<body>
+	<h3>播视频</h3>
+	<!-- 
+	controls:false 是否显示自动播放控件
+	autoplay  兼容性非常差 
+	loop:false  是否循环播放
+	muted 是否静音播放
+	poster:''  在播放第一帧画面之前显示海报
+	preload 视频预加载策略
+		-auto  预加载一定时长视频和元数据
+		-metadata  只预加载元数据(时长；尺寸；第一帧画面) -->
+	<video src="res/x.mp4" controls   poster='./res/ad.png' loop='true' id='v3'></video><br/>
+	<button id='btn3'>播放视频</button>
+	<button id='btn4'>暂停视频</button>
+	<!-- js属性：
+		volume:1 当前的音量
+		playbackRate:1 播放速率  回访速度大于1快放    小于1慢播
+		paused:false	当前视频是否处于暂停状态
+			play() 调用函数   自动播放视频
+			pause() 调用函数  自动暂停视频
+
+	-->
+	<script>
+
+		//1.获取视频与两个按钮元素
+		var v3=document.getElementById('v3');
+		var b3=document.getElementById('btn3');
+		var b4=document.getElementById('btn4');
+		// js视频事件
+		// onplay
+		// onpause
+		v3.onplay=function(){
+			console.log('视频正在播放');
+		};
+		v3.onpause=function(){
+			console.log('视频暂停');
+		}
+		// v3.volume=0.5; //0~1
+		// v3.playbackRate=0.2;
+		// console.log('当前视频的状态'+v3.paused);
+
+		//2.获取按钮一绑定点击事件   事件中播放视频
+		b3.onclick=function(){
+			v3.play();
+			v3.playbackRate=4;
+			v3.volume=0.8;
+		}
+		//3.获取按钮二绑定点击事件	事件中暂停播放
+		b4.onclick=function(){
+			v3.pause();
+		}
+	</script>
+</body>
+</html>

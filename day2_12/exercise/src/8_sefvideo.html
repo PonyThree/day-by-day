@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>自定义播放按钮</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		body{
+			background-color: #fff;
+			text-align:center;
+		}
+		.container{
+			position:relative;
+			width:856px;
+			margin:0 auto;
+		}
+		.ad{
+			display:none;
+			position:absolute;
+			width:400px;
+			height: 300px;
+			left:50%;
+			top:50%;
+			margin-left:-200px;
+			margin-top:-150px;
+		}
+		.ctrl{
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-top:-60px;
+			margin-left:-60px;
+		}
+		.ctrl >img{
+			display:none;
+			width:120px;
+			height: 120px;
+		}
+	</style>
+</head>
+<body>
+	<h3>自定义播放按钮</h3>
+	<!-- 最外层父元素 -->
+	<div class='container'>
+		<!-- 视频元素 -->
+		<video src='./res/x.mp4' id='v3'></video>
+		<!-- 广告 -->
+		<img src="./res/ad.png" alt="" class='ad'>
+		<!-- 图片按钮 -->
+		<!-- a鼠标移入 变小手形状 -->
+		<!-- a绑定点击事件 -->
+		<a href="" class='ctrl'>
+			<img src="./res/play.png" alt="" id='btn1' >
+		</a>
+	</div>
+	
+</body>
+<script>
+	//1：获取父元素 视频 a img
+	var container=document.querySelector('.container');
+	var v3=document.getElementById('v3');
+	var ctrl=document.querySelector('.ctrl');
+	var img=document.querySelector('.ctrl >img');
+	var ad=document.querySelector('.ad');
+	//2:为父元素绑定鼠标 进入离开操作
+	container.onmouseenter=function(){
+		//鼠标进入 播放显示
+		img.style.display='block';
+	};
+	container.onmouseleave=function(){
+		//鼠标离开 播放隐藏
+		img.style.display='none';
+	}
+	//3:为ctrl绑定点击事件
+	ctrl.onclick=function(e){
+		//3.1阻止事件默认行为
+		e.preventDefault();
+		//3.2判断当前视频暂停状态true
+		if(v3.paused){
+			//3.3播放状态 切换图片
+			v3.play();
+			// ad.style.display='none';
+			//到暂停图片---下一次切换做准备
+			img.src='./res/pause.png';
+			
+		}
+			
+		else{
+			//3.4暂停状态 切换图片
+			v3.pause();
+			// ad.style.display='block';
+			//到播放图片---下一次切换做准备
+			img.src='./res/play.png';
+		}
+		
+	}
+	//4:广告显示与隐藏
+	v3.onplay=function(){
+		ad.style.display='none';
+	}
+	v3.onpause=function(){
+		ad.style.display='block';
+	}
+</script>
+</html>

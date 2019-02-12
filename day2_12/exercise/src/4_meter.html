@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>刻度尺</title>
+</head>
+<body>
+	<h3>当月的薪水</h3>
+	<meter min='0' max='100000' low='3000'  high='20000' optimum='90000' value='0'></meter>
+	<script>
+	//定时器+刻度尺 实现一个可以动态前进刻度尺
+	//注意:每次修改当前值： +500 1000
+	//		修改时间 1000 100ms 50ms
+	var t=setInterval(function(){
+		var mymeter=document.getElementsByTagName('meter')[0];
+		var fvalue=mymeter.value;
+		fvalue+=500;
+		mymeter.value=fvalue;
+		if(fvalue==100000)
+		clearInterval(t);
+	},100)
+	</script>
+</body>
+</html>
