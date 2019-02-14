@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		canvas{
+			background-color:antiquewhite;
+		}
+	
+	</style>
+</head>
+<body>
+	<canvas id="c3" width='500' height='400'></canvas>
+	<script>
+		var c3=document.getElementById('c3');
+		var ctx=c3.getContext('2d');
+		//1:创建两个变量保存不同飞机旋转角度
+		var deg1=10*Math.PI/180;
+		var deg2=120*Math.PI/180;
+		//2：创建图像对象
+		var p3=new Image();
+		//3:下载图像
+		p3.src='./res/p3.png';
+		//4:绑定onload事件
+		p3.onload=function(){
+			//5：创建定时器
+			setInterval(function(){
+				//5.1:保存画笔的状态
+				ctx.clearRect(0,0,500,400);
+				ctx.save();
+				//5.2:平移原点
+				ctx.translate(100,100);
+				//5.3旋转 10度
+				ctx.rotate(deg1);
+				//5.4绘制图像
+				ctx.drawImage(p3,-50,-40,100,80);
+				//5.5恢复画笔状态
+				ctx.restore();
+				deg1+=10;
+			},500);	
+		};
+			//5.6累加小飞机1角度 ---小飞机1 end
+		//2：创建图像对象
+		var p4=new Image();
+		//3:下载图像
+		p4.src='./res/p4.png';
+		//4:绑定onload事件
+		p4.onload=function(){
+			//5：创建定时器
+			setInterval(function(){
+				// ctx.clearRect(-100,-200,500,400);
+				//5.1:保存画笔的状态
+				ctx.save();
+				//5.2:平移原点
+				ctx.translate(400,200);
+				//5.3旋转 10度
+				ctx.rotate(deg2);
+				//5.4绘制图像
+				ctx.drawImage(p4,-50,-40,100,80);
+				//5.5恢复画笔状态
+				ctx.restore();
+				deg2+=10;
+			},500);	
+		};
+	</script>
+</body>
+</html>

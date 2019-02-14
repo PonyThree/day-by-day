@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>画笑脸</title>
+	<style>
+		canvas{
+			background-color: #ccc;
+		}
+	
+	
+	</style>
+</head>
+<body>
+	<canvas id='c3' width='500' height='400'></canvas>
+	<script>
+		var c3=document.getElementById('c3');
+		var ctx=c3.getContext('2d');
+		//闭着嘴的笑脸
+		function closeMouth(){
+			ctx.beginPath();
+			//1:绘制外围轮廓
+			ctx.moveTo(100,100);
+			ctx.strokeStyle='#000';
+			ctx.lineTo(150,100);
+			ctx.arc(100,100,50,0,Math.PI*2);
+			ctx.stroke();
+			//2:绘制眼球蓝色
+			ctx.beginPath();
+			ctx.arc(108,80,10,0,Math.PI*2);
+			ctx.fillStyle='blue';
+			ctx.fill();
+			//3:绘制眼神白色
+			ctx.beginPath();
+			ctx.arc(112,78,4,0,Math.PI*2);
+			ctx.fillStyle='#fff';
+			ctx.fill();
+
+		}
+		function openMouth(){
+			//1：外轮廓
+			ctx.beginPath();
+			ctx.arc(100,100,50,35*Math.PI/180,345*Math.PI/180);
+			ctx.lineTo(100,100);
+			ctx.closePath();
+			ctx.stroke();
+			//蓝色眼球
+			ctx.beginPath();
+			ctx.arc(108,80,10,0,Math.PI*2);
+			ctx.fillStyle='blue';
+			ctx.fill();
+			//白色眼球
+			ctx.beginPath();
+			ctx.arc(112,78,4,0,Math.PI*2);
+			ctx.fillStyle='#fff';
+			ctx.fill();
+		}
+		var bool=false;
+		setInterval(function(){
+			ctx.clearRect(0,0,500,400);
+			if(!bool)
+			closeMouth();
+			else
+			openMouth();
+			bool=!bool;
+		},500);
+		// var index=0;
+		// setInterval(function(){
+		// 	ctx.clearRect(0,0,500,400);
+		// 	index++;
+		// 	if(index%2==0)
+		// 	closeMouth();
+		// 	else
+		// 	openMouth();
+		// },1000);
+	
+	</script>
+</body>
+</html>

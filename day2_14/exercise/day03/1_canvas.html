@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Cancas路径画图</title>
+	<style>
+		canvas{
+			background-color: #000;
+		}
+	
+	</style>
+</head>
+<body>
+	<h3>绘制路径</h3>
+	<canvas id="c3" width='500' height='400'></canvas>
+	<script>
+		var c3=document.getElementById('c3');
+		var ctx=c3.getContext('2d');
+		//1:开始一条新路径
+		// ctx.beginPath();
+		// ctx.moveTo(250,200);
+		// ctx.lineTo(350,200);
+		// ctx.lineTo(350,300);
+		// ctx.closePath();
+		// ctx.stroke();
+		//画一个左上角的三角
+			//(1)开始一条新路径
+			//(2)结束上一条路径
+		ctx.beginPath();
+		ctx.moveTo(0,0);
+		ctx.lineTo(40,0)
+		ctx.lineTo(0,40);
+		ctx.closePath();
+		ctx.fillStyle='#afa';
+		ctx.fill();
+		//画一个圆拱形
+		ctx.beginPath();
+		ctx.arc(400,60,50,0,Math.PI*2);
+		ctx.fillStyle='#f00';
+		ctx.fill();
+		//画左上角半圆
+		ctx.beginPath();
+		ctx.arc(50,50,50,0,Math.PI);
+		ctx.strokeStyle='#ff0';
+		ctx.stroke();
+		//画一个右下角半圆
+		ctx.beginPath();
+		ctx.arc(450,350,40,Math.PI/2,-1*(Math.PI/2));
+		ctx.fillStyle='pink';
+		ctx.fill();
+
+		
+	
+	</script>
+</body>
+</html>

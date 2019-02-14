@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		canvas{
+			background-color:antiquewhite;
+		}	
+	</style>
+</head>
+<body>
+	<canvas id='c3' width='500' height='400'></canvas>
+	<script>
+		var c3=document.getElementById('c3');
+		var ctx=c3.getContext('2d');
+		//1:创建图片对象
+		var p3=new Image();
+		//2:下载图片
+		p3.src='./res/timg1.png';
+		//3:绑定事件：下载完成
+		p3.onload=function(){
+			//3.1:绘制图片---参数:  图片对象p3   x  y w h
+			//左上
+			ctx.drawImage(p3,0,0,100,100);
+			//左下
+			ctx.drawImage(p3,0,300,100,100);
+			//中心
+			ctx.drawImage(p3,200,150,100,100);
+			//右上
+			ctx.drawImage(p3,400,0,100,100);
+			//右下
+			ctx.drawImage(p3,400,300,100,100)
+
+		}
+	</script>
+</body>
+</html>
