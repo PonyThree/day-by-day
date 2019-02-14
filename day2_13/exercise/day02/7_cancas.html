@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		canvas{
+			background-color: pink;
+		}
+	
+	</style>
+</head>
+<body>
+	<canvas id='c3' width='500' height='400'></canvas>
+	<script>
+		var c3=document.getElementById('c3');
+		var ctx=c3.getContext('2d');
+		var str='Canvas google';
+		ctx.font='39px SimHei';
+		//默认是基线对齐 --修改为顶部对齐
+		ctx.textBaseline='top';
+		//左上
+		ctx.fillStyle='#ff0';
+		ctx.fillText(str,0,0);
+		//获取文本的宽度
+		var w=ctx.measureText(str).width;
+		//左下
+		ctx.fillStyle='#afa';
+		ctx.fillText(str,0,356);
+		//右上
+		ctx.fillStyle='#aaf';
+		ctx.fillText(str,500-w,0);
+		//右下
+		ctx.fillStyle='orange';
+		ctx.fillText(str,500-w,356);
+	
+	
+	
+	</script>
+</body>
+</html>

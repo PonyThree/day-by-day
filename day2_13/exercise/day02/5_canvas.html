@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>canvas</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		body{
+			text-align:center;
+		}
+		canvas{
+			margin-top:120px;
+			background-color: #ddd;
+			border:1px solid orange;
+		}
+	</style>
+</head>
+<body>
+	<!-- <h3>canvas</h3> -->
+	<!-- 注意：画布宽度和高度只能使用属性或js赋值，不能使用css样式来赋值(会出现css缩放) -->
+	<canvas id='c3' width='500' height='400'></canvas>
+	<script>
+		//1:获取画布
+		var c3=document.getElementById('c3');
+		//2:获取画笔[上下文对象]
+		//一个画笔对象对应一个画布对象
+		var ctx=c3.getContext('2d');
+		// ctx属性:
+		// -ctx.lineWidth=1 描边宽度(空心矩形框宽度)
+		// -ctx.strokeStyle='#f00' 描边样式 (边框颜色)
+		// -ctx.fillStyle='#afa'	填充样式(实心矩形内容样式)
+		// -ctx.strokeRect(x,y,w,h);	描边一个矩形
+		// -ctx.fillRect(x,y,w,h)  填充一个矩形
+		// 注意事项:矩形定位点在自己左上角
+		// 左上角
+		ctx.fillStyle='#aaf';
+		ctx.fillRect(0,0,100,80);
+		//左下角
+		ctx.fillStyle='#aff';
+		ctx.fillRect(0,320,100,80);
+		//右下角
+		ctx.fillStyle='#afa';
+		ctx.fillRect(400,320,100,80);
+		//右上角
+		ctx.fillStyle='#ffa';
+		ctx.fillRect(400,0,100,80);
+		//居中
+		ctx.fillStyle='pink';
+		ctx.fillRect(200,160,100,80);
+	</script>
+</body>
+</html>

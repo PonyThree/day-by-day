@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>表单视频</title>
+	<style>
+		.container{
+			position:relative;
+			text-align:center;
+		}
+
+		.container .v3{
+			position:absolute;
+			top:10%;
+			left:50%;
+			margin-left:-428px;
+			z-index:-1;
+		}
+		.container .f3{
+			position:absolute;
+			top:236px;
+			left:50%;
+			margin-left:-102px;
+			z-index:2;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form class="f3">
+			用户<input type="text" name='uname'><br/>
+			密码<input type="password" name='upwd'><br/>
+			<input type="submit" value='登录'>
+		</form>
+		<video src='./res/x.mp4' loop  autoplay class='v3'></video>
+	</div>
+</body>
+</html>

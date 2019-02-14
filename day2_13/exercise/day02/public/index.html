@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		canvas{
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<h3>public/index.html</h3>
+	<canvas id=c3 width='500' height='400'></canvas>
+	<script>
+		// 1:获取画布
+	var c3=document.getElementById('c3');
+		// 2：获取画笔
+	var ctx=c3.getContext('2d');
+		// 3：发送ajax请求
+		//4:创建xhr对象
+		var xhr=new XMLHttpRequest();
+		//5:绑定事件
+		xhr.onreadystatechange=function(){
+			// console.log(123);
+			//判断 xhr.readyState==4  xhr.status==200
+			if(xhr.readyState==4&&xhr.status==200){
+				//7:接收返回结果 xhr.responseText
+					//7.1将服务器返回的字符串转换成js对象
+				var obj=JSON.parse(xhr.responseText);
+				// console.log(obj);
+				var colors=['#7B68EE','#4169E1','#cc99ee'];
+				for(var i=0;i<obj.length;i++){
+					var w=50;
+					var h=obj[i].value;
+					var x=i*100+50;
+					var y=400-h;
+					//开始画矩形
+					ctx.fillStyle=colors[i];
+					ctx.fillRect(x,y,w,h);
+				}
+			}
+		}
+		//8:打开xhr连接
+		var url='http://127.0.0.1:3000/sales';
+		xhr.open('get',url,true);
+		//9：发送请求
+		xhr.send(null);
+			
+	
+	
+	</script>
+</body>
+</html>

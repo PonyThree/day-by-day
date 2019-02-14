@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body{
+			text-align:center;
+		}
+		canvas{
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<canvas id='c3' width='500' height='400'></canvas>
+	<script>
+		// 1:获取画布
+		var c3=document.getElementById('c3');
+		// 2:获取画笔
+		var ctx=c3.getContext('2d');
+		// 3:创建变量保存矩形x值 
+		var path=0;
+			//3.1:创建方向变量  1向右  -1向左
+			var xDirecton=1;
+		// 4:创建定时器
+		var timer=setInterval(function(){
+		ctx.fillStyle='#aaf';
+		// 	4.1:清除画布
+		ctx.clearRect(path,0,100,80);
+		// 	4.3:绘制矩形
+		if(path>400)//矩形移动最右侧 向左
+			xDirecton=-1;
+		if(path<0)
+			xDirecton=1;
+		// 	4.2:修改x值
+		path+=10*xDirecton;
+		ctx.fillRect(path,0,100,80);
+		},50);
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>音频</title>
+</head>
+<body>
+	<h3>音频</h3>
+	<input type="checkbox" id='cb'>
+		<ul class="ci" style='list-style-type: none;'>
+			<li>小生的花伞还落在你家</li>
+			<li>你美眷如花</li>
+			<li>我浪迹天涯</li>
+			<li>为我泡杯花茶</li>
+			<li>和你有些不搭</li>
+			<li>气氛开始有一点尴尬</li>
+			<li>你腼腆一笑</li>
+			<li>竟如此融洽</li>
+			<li>我情不自禁会为你牵挂</li>
+			<li>什么时代</li>
+			<li>早已经不想回家</li>
+			<li>你微微一笑</li>
+			<li>蝴蝶为你倾倒</li>
+			<li>凝眸几秒</li>
+			<li>不知道该干嘛</li>
+			<li>你拂袖模样</li>
+			<li>情千变万化</li>
+			<li>一壶好酒</li>
+			<li>趁着夜还未央</li>
+			<li>独自品尝</li>
+			<li>这大把好时光</li>
+			<li>夜深人静</li>
+			<li>略显一丝凄凉</li>
+			<li>东奔西走</li>
+			<li>微醺不宜骑马</li>
+			<li>听着浪人</li>
+			<li>弹着断了弦的琵琶</li>
+			<li>路过青楼酒馆</li>
+			<li>官人进来坐坐好吗</li>
+			<li>我的思念</li>
+			<li>似六月里的小雨哗哗</li>
+			<li>对你情有所钟</li>
+			<li>为你两袖清风</li>
+		</ul>
+	<audio src="./res/hu66.mp3" id='a3'></audio>
+</body>
+<script>
+	//创建复选框控制背景音乐播放
+	var cb=document.getElementById('cb');
+	cb.onchange=function(){
+		console.log(cb.checked);
+	//当复选框选中 播放背景音乐	play()
+		if(cb.checked==true)
+		a3.play();
+	//当清空复选框 背景音乐停止  pause()
+		else
+		a3.pause();
+	}
+</script>
+</html>

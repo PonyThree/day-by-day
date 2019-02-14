@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>视频高级属性</title>
+	<style>
+		.box{
+			width: 100%;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<h3>视频高级属性</h3>
+	<div id="box">
+		<!-- webkit-playsinline='true'  ios 阻止同层播放-->
+		<!-- <video src="./res/x.mp4" webkit-playsinline='true'></video> -->
+		<!-- playsinline='true'  Android 阻止同层播放-->
+		<!-- <video src="./res/x.mp4" playsinline='true'></video> -->
+		<!--  x5-video-player-fullscreen='true' 解决安卓的横屏错位 -->
+		<video src="./res/x.mp4" x5-video-player-fullscreen='true' id='v3' ></video>
+	</div>
+</body>
+<script>
+	//获取最外层父元素为其绑定点击事件
+	// var box=document.querySelector('#box');
+	// //在事件中播放视频
+	// box.onclick=function(){
+	// 	v3.play();
+	// }
+
+	//1:获取外部div元素，获取视频元素
+	var box=document.getElementById('box');
+	var v3=document.getElementById('v3');
+	//2:为div元素绑点击事件，事件处理函数播放视频
+	 box.onclick=function(){
+		v3.play();
+		v3.playbackRate=6;
+		//3:绑定事件三个事件
+		//4:canpalythrough
+		v3.addEventListener('canplaythrough',function(){
+			console.log('视频总长:'+v3.duration);
+		});
+		//5:timeupdate
+		v3.addEventListener('timeupdate',function(){
+			console.log('当前时间点:'+v3.currentTime);
+		});
+		//6:ended
+		v3.addEventListener('ended',function(){
+			console.log('播放结束');
+		});
+	}
+		
+	
+
+</script>
+</html>
