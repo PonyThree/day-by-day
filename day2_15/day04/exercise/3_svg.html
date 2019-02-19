@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body{
+			text-align:center;
+		}
+		svg{
+			background-color:antiquewhite;
+		}
+	</style>
+</head>
+<body>
+	<svg id="s3" width='500' height='400'></svg>
+	<script>
+	var s3=document.getElementById('s3');
+	//1:创建对象方式创建图形
+	var c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+	c.setAttribute('cx',100);
+	c.setAttribute('cy',100);
+	c.setAttribute('r',50);
+	c.setAttribute('fill','#aaf');
+	s3.appendChild(c);
+	//1.1练习 在svg画布中央位置创建30*300矩形柱子，初始化淡红色填充(#faa)和红色(#800)描边,都半透明
+	var rect=document.createElementNS('http://www.w3.org/2000/svg','rect');
+	rect.setAttribute('x',235);
+	rect.setAttribute('y',50);
+	rect.setAttribute('width',30);
+	rect.setAttribute('height',300);
+	rect.setAttribute('fill','#faa');
+	rect.setAttribute('stroke','#800');
+	rect.setAttribute('fill-opacity',0.5);
+	rect.setAttribute('stroke-opacity',0.5);
+	s3.appendChild(rect);
+	//鼠标悬停时变不透明
+	rect.onmouseover=function(){
+		this.setAttribute('fill-opacity',1);
+		this.setAttribute('stroke-opacity',1);
+	}
+	rect.onmouseout=function(){
+		this.setAttribute('fill-opacity',0.5);
+		this.setAttribute('stroke-opacity',0.5);
+	}
+	//2:通过拼接字符串
+	
+	
+	
+	</script>
+</body>
+</html>

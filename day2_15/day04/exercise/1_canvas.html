@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		canvas{
+			background-color:aliceblue;
+		}
+	
+	</style>
+</head>
+<body>
+	<canvas id='c3' width='500' height='400'></canvas>
+	<script>
+		var c3=document.getElementById('c3');
+		var ctx=c3.getContext('2d');
+		// 1:创建一个渐变对象
+		var g=ctx.createLinearGradient(100,150,500,300);
+		// 2:添加颜色点
+		g.addColorStop(0,'pink');
+		g.addColorStop(0.3,'red');
+		g.addColorStop(0.6,'blue');
+		g.addColorStop(0.9,'green');
+		g.addColorStop(1,'#afa');
+		// 3:将渐变色对象赋值填充样式
+		ctx.fillStyle=g;
+		// 4:绘制填充矩形和填充文字
+		var str='Canvas';
+		ctx.fillRect(100,100,300,100);
+		ctx.font='39px SimHei';
+		ctx.fillStyle='#ff0';
+		ctx.fillText(str,200,160);
+	
+	
+	
+	</script>
+</body>
+</html>
