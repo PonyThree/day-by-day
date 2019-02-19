@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src='echarts.min.js'></script>
+</head>
+<body>
+	<div id="main" style='width:500px;height:400px'>
+	</div>
+	<script>
+		var main=document.getElementById('main');
+		var mycharts=echarts.init(main);
+		var option={
+			title:{text:'echarts示例'},
+			series:[{
+				type:'pie',
+				radius:'50%',
+				center:['50%','50%'],
+				data:[
+					{value:325,name:'搜索引擎'},
+					{value:295,name:'直接访问'},
+					{value:119,name:'邮件'},
+					{value:200,name:'qq'},
+					{value:300,name:'微信'},
+				]
+
+			}]
+		}
+		mycharts.setOption(option);
+		
+	
+	</script>
+</body>
+</html>

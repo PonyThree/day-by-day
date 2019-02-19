@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> 仪表盘</title>
+	<!-- 1:引入echarts.js -->
+	<script src='echarts.min.js'></script>
+</head>
+<body>
+	<!-- 2:创建容器div -->
+	<div id="main" style='width:500px;height:400px;'>
+
+	</div>
+	<script>
+	// 3:获取容器对象  创建echart对象
+	var main=document.getElementById('main');
+	var mychart=echarts.init(main);
+	// 4:创建option配置项
+	var option={
+		title:{text:'echarts示例'},
+		series:[{
+			type:'gauge',
+			detail:{formatter:'{value}%'},
+			data:[
+				{
+				value:12,
+				name:'汽车速度1'
+				},
+				{
+				value:62,
+				name:'汽车速度2'
+				},
+				{
+				value:92,
+				name:'汽车速度3'
+			}
+		]
+			}]
+	}
+	// 5:将option添加到echarts对象
+	mychart.setOption(option);
+	</script>
+</body>
+</html>

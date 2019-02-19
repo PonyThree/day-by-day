@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<img src='trash.png' id='t' style='width:100px;'>
+	<hr/>
+	<img src='timg1.png' id='p3' style='width:100px;'>
+	<script>
+		// 获取拖动目标对象
+		var t=document.getElementById('t');
+		t.ondragenter=function(){
+			console.log('拖动进入');
+		}
+		t.ondragover=function(e){
+			e.preventDefault();
+			console.log('拖动悬浮');
+		}
+		t.ondragleave=function(){
+			console.log('拖动离开');
+		}
+		t.ondrop=function(){
+			console.log('拖动释放');
+		}
+		//拖动源对象
+		var p3=document.getElementById('p3');
+		//拖动开始
+		p3.ondragstart=function(){
+			console.log('1:拖动的开始')
+		}
+		//拖动中
+		p3.ondrag=function(){
+			console.log('拖动中');
+		}
+		//拖动结束
+		p3.ondragend=function(){
+			console.log('拖动结束');
+		}
+	</script>
+</body>
+</html>

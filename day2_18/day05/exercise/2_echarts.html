@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src='echarts.min.js'></script>
+</head>
+<body>
+	<div id="main" style='width:500px;height:400px;'>
+	</div>
+	<script>
+		// 1:获取容器
+		var main=document.getElementById('main');
+		// 2：创建echarts对象
+		var mychart=echarts.init(main);
+		// 3:创建配置项
+		var option={
+			title:{text:'echarts示例一'},
+			xAxis:{data:['衬衣','裤子','袜子','高跟鞋']},
+			yAxis:{},
+			series:[{type:'bar',data:[10,1,6,18]}]
+		}
+		// 4:将配置项添加echarts对象中
+		mychart.setOption(option);
+	
+	
+	</script>
+</body>
+</html>
