@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<button>星期一</button>
+	<script src='src/01.js'></script>
+	<button>星期二</button>
+
+	<button>星期一</button>
+	<script>
+		var w=new Worker('src/01.js');
+		//1创建Worker对象 
+		//2创建新线程执行01.js
+		//Worker不允许操作BOM/DOM
+		w.onmessage=function(e){
+			console.log('UI接收到Worker消息:'+e.data);
+		}
+		//UI发送消息
+		w.postMessage('UI发送消息:(');
+	</script>
+	<button>星期二</button>
+</body>
+</html>

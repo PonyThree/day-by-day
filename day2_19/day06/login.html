@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<h3>登录页</h3>
+	<form action="#">
+		用户名:<input type="text" name='uname' id='uname'><br/>
+		密码:<input type="password" name='upwd' id='upwd'><br/>
+		<input type="button" id='btn' value='提交'>
+	</form>
+	<script>
+		btn.onclick=function(){
+			//将用户名保存 sessionStorage
+			sessionStorage.setItem('uname',uname.value);
+			if(uname.value!=''&&upwd.value!=''){
+				// alert('123');
+			setTimeout(function(){
+				location.href='http://127.0.0.1:5500/day06/index.html';
+			},1000);
+			}
+		}
+	</script>
+</body>
+</html>

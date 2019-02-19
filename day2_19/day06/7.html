@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.blue{
+			background-color: #ddf;
+			color:#33a;
+		}
+		.pink{
+			background-color: #fdf;
+			color:#a3a;
+		}
+		.dark{
+			background-color: #333;
+			color:#eee;
+		}
+	</style>
+</head>
+<body>
+	<select id="sel">
+		<option>--请选择--</option>
+		<option value='blue'>火蓝天空</option>
+		<option value='pink' >芭比天空</option>
+		<option value='dark'>黑暗天空</option>
+	</select>	
+	<script>
+		//1:获取下拉列表
+		//2:绑定事件
+		sel.onchange=function(){
+			//3:获取选中元素value
+			var value=this.value;
+			//4:将value应用到body元素样式
+			document.body.className=value;
+			//将value值保存在localstorage中
+			localStorage.setItem('style',value);
+		}
+		//3:获取localStorage值 如果存在
+		var style=localStorage.getItem('style');
+			if(style){
+				document.body.className=style;
+				var op=document.querySelector(`#sel > option[value=${style}]`);
+				console.log(op);
+				op.setAttribute('selected',true);
+			}
+		
+	</script>
+</body>
+</html>

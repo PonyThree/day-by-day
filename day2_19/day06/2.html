@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<!--1:输入数值 -->
+	请输入数值:<input type="number" id='num'>
+	<!-- 2:按钮 -->
+	<button id='btn'>开始计算</button>
+	<!-- 3:显示结果 -->
+	<div class="msg">
+
+	</div>
+	<script>
+		//4:获取元素
+		var msg=document.querySelector('.msg');
+		//5:为按钮绑定事件
+			btn.onclick=function(){
+				//6:创建Worker执行02.js
+				var w=new Worker('src/02.js');
+				if(num.value!='')
+				//7:UI发送数据给Worker 02.js
+				w.postMessage(num.value);
+				else
+				alert('发送数据为空');
+				//8:UI接收Worker02.js发送的数据并且显示到box中去
+				w.onmessage=function(e){
+					msg.innerHTML=e.data;
+				}
+			}
+		
+	</script>
+</body>
+</html>

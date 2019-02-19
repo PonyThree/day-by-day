@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<h3>04.html 获取数据</h3>
+	<script>
+		var rs=sessionStorage.getItem('name');
+		console.log(rs);
+		document.body.innerHTML=rs;
+		rs=sessionStorage.getItem('car1');
+		document.body.innerHTML+=rs;
+		console.log(sessionStorage);
+		console.log(sessionStorage.length);
+		console.log(sessionStorage.key(0))
+		sessionStorage.removeItem('name');
+		慎用sessionStorage.clear();
+		//练习:完成用户登录判断
+	</script>
+</body>
+</html>
