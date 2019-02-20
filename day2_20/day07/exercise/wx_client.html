@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<button id='btn1'>创建ws连接并接收数据</button>
+	<button id='btn2'>ws发送数据</button>
+	<button id='btn3'>ws关闭连接</button>
+	<script>
+		// 1:获取三个按钮
+		// 2:创建变量 保存websocket对象
+		var ws=null;
+		// 3:为三个按钮分别绑定点击事件
+		// 4：第一个按钮创建  webrocket连接
+		btn1.onclick=function(){
+			// 9001服务器默认端口号
+			ws=new WebSocket('ws://127.0.0.1:9001');
+			ws.onmessage=function(e){
+			console.log(`服务器的数据:`+e.data);
+			}
+		}
+		// 5:第二个按钮创建 	发送数据给服务器
+		btn2.onclick=function(){
+			ws.send(new Date().toUTCString());
+		}
+		// 6:第三个按钮创建	关闭连接
+		btn3.onclick=function(){
+			ws.close();
+		}
+		
+	</script>
+</body>
+</html>
